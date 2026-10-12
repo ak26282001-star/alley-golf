@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Alley Golf: Mini Golf, Drinks &amp; Late Nights</title>
+  <meta name="description" content="Alley Golf is crazy golf after dark: two neon-lit nine-hole courses, cocktails and street food. Book a tee time online for friends, dates and groups.">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Alley Golf">
+  <meta property="og:title" content="Alley Golf: Mini Golf, Drinks &amp; Late Nights">
+  <meta property="og:description" content="Two neon-lit nine-hole courses, cocktails and street food. Book a tee time online.">
+  <!-- Social crawlers need an absolute URL: replace with https://YOUR-DOMAIN/assets/img/og-image.jpg before launch -->
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EntertainmentBusiness",
+    "name": "Alley Golf",
+    "description": "Neon-lit crazy golf with cocktails and street food."
+  }
+  </script>
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================================= HEADER ================================= -->
+  <header class="site-header" data-header>
+    <div class="site-header__inner">
+      <a class="logo" href="#top" aria-label="Alley Golf, home">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 30 V9 l12 5 -12 5" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="26" cy="29" r="3" fill="currentColor"/>
+        </svg>
+        <span class="logo__word">Alley<b>Golf</b></span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+          <span class="nav__toggle-label">Menu</span>
+          <span class="nav__toggle-bars" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <ul class="nav__menu" id="nav-menu" data-nav-menu>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#warmup">Warm-up</a></li>
+          <li><a href="#bar">Food &amp; drink</a></li>
+          <li><a href="#groups">Groups</a></li>
+          <li class="nav__cta"><a class="btn btn--neon" href="#book">Book a tee time</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================================= HERO ================================= -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <svg class="hero__scene" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#05060a"/><stop offset="1" stop-color="#151827"/>
+          </linearGradient>
+          <linearGradient id="wallL" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#3a1f1a"/><stop offset=".7" stop-color="#1c1112"/><stop offset="1" stop-color="#0d0a0d"/>
+          </linearGradient>
+          <linearGradient id="wallR" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stop-color="#2a1a1c"/><stop offset=".7" stop-color="#160f13"/><stop offset="1" stop-color="#0b090d"/>
+          </linearGradient>
+          <linearGradient id="floor" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="#14161d"/><stop offset="1" stop-color="#07080b"/>
+          </linearGradient>
+          <linearGradient id="turf" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="#2f7a3a"/><stop offset=".6" stop-color="#1d4f28"/><stop offset="1" stop-color="#0f2a16"/>
+          </linearGradient>
+          <radialGradient id="door" cx=".5" cy="1" r=".9">
+            <stop offset="0" stop-color="#ffbf6b" stop-opacity=".95"/><stop offset=".5" stop-color="#ff7a3d" stop-opacity=".35"/><stop offset="1" stop-color="#ff7a3d" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="pool" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#ff4f7b" stop-opacity=".5"/><stop offset="1" stop-color="#ff4f7b" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="bulb" r=".5">
+            <stop offset="0" stop-color="#fff3d6"/><stop offset=".35" stop-color="#ffd28a" stop-opacity=".8"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+          </radialGradient>
+          <pattern id="bricks" width="64" height="28" patternUnits="userSpaceOnUse">
+            <path d="M0 0H64M0 14H64M0 0V14M32 14V28" stroke="#000" stroke-opacity=".35" stroke-width="2" fill="none"/>
+          </pattern>
+          <filter id="neon" x="-20%" y="-60%" width="140%" height="220%">
+            <feGaussianBlur stdDeviation="6" result="b1"/><feGaussianBlur in="SourceGraphic" stdDeviation="18" result="b2"/>
+            <feMerge><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+        </defs>
+
+        <rect width="1600" height="1000" fill="url(#sky)"/>
+        <!-- back wall + doorway -->
+        <rect x="600" y="300" width="400" height="330" fill="#0e0c10"/>
+        <rect x="600" y="300" width="400" height="330" fill="url(#bricks)" opacity=".5"/>
+        <rect x="745" y="470" width="110" height="160" fill="#2a1408"/>
+        <rect x="745" y="470" width="110" height="160" fill="url(#door)"/>
+        <ellipse cx="800" cy="640" rx="260" ry="40" fill="url(#door)" opacity=".5"/>
+
+        <!-- walls -->
+        <path d="M0 0 L600 300 L600 630 L0 1000 Z" fill="url(#wallL)"/>
+        <path d="M0 0 L600 300 L600 630 L0 1000 Z" fill="url(#bricks)" transform="" opacity=".55"/>
+        <path d="M1600 0 L1000 300 L1000 630 L1600 1000 Z" fill="url(#wallR)"/>
+        <path d="M1600 0 L1000 300 L1000 630 L1600 1000 Z" fill="url(#bricks)" opacity=".45"/>
+        <!-- fire escape on left wall -->
+        <g stroke="#000" stroke-opacity=".7" stroke-width="4" fill="none">
+          <path d="M120 120 L420 270 M120 300 L420 395 M120 120 L120 300 M420 270 L420 395"/>
+          <path d="M150 135 L150 310 M200 160 L200 326 M250 185 L250 342 M300 210 L300 358 M350 235 L350 374 M390 255 L390 386" stroke-width="2"/>
+        </g>
+        <!-- floor -->
+        <path d="M0 1000 L600 630 L1000 630 L1600 1000 Z" fill="url(#floor)"/>
+        <!-- putting green strip -->
+        <path d="M430 1000 L730 630 L870 630 L1170 1000 Z" fill="url(#turf)"/>
+        <path d="M430 1000 L730 630 M1170 1000 L870 630" stroke="#c8ff4d" stroke-opacity=".35" stroke-width="2"/>
+        <!-- wet-floor neon reflections -->
+        <ellipse cx="300" cy="820" rx="260" ry="60" fill="url(#pool)" filter="url(#soft)"/>
+        <ellipse cx="800" cy="700" rx="140" ry="22" fill="#c8ff4d" opacity=".12" filter="url(#soft)"/>
+
+        <!-- cup + flag -->
+        <ellipse cx="800" cy="668" rx="16" ry="4.5" fill="#000"/>
+        <line x1="800" y1="668" x2="800" y2="540" stroke="#e9e6dc" stroke-width="2.5"/>
+        <path d="M800 542 L846 556 L800 572 Z" fill="#c8ff4d" class="flag"/>
+
+        <!-- rolling ball with glow trail -->
+        <g class="ball">
+          <circle r="11" fill="#fff" opacity=".18" filter="url(#soft)">
+            <animateMotion dur="5.5s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.62;1" calcMode="spline" keySplines=".2 .7 .3 1;0 0 1 1" path="M820 960 C 760 860, 860 760, 800 668"/>
+          </circle>
+          <circle r="9" fill="#fbfaf5">
+            <animateMotion dur="5.5s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.62;1" calcMode="spline" keySplines=".2 .7 .3 1;0 0 1 1" path="M820 960 C 760 860, 860 760, 800 668"/>
+            <animate attributeName="r" dur="5.5s" repeatCount="indefinite" values="13;4;0;0" keyTimes="0;.6;.63;1"/>
+          </circle>
+        </g>
+
+        <!-- string lights -->
+        <g class="lights">
+          <path d="M0 150 Q 400 330 820 250 T 1600 170" stroke="#000" stroke-width="2" fill="none" opacity=".8"/>
+          <path d="M0 330 Q 420 470 800 420 T 1600 360" stroke="#000" stroke-width="2" fill="none" opacity=".8"/>
+        </g>
+        <g class="bulbs" data-bulbs></g>
+
+        <!-- neon sign on right wall -->
+        <g class="neon" transform="matrix(1 -.5 0 1 1090 520)">
+          <rect x="-10" y="-70" width="420" height="160" rx="10" fill="#0a0709" opacity=".6"/>
+          <text x="200" y="10" text-anchor="middle" class="neon__text neon__text--pink" filter="url(#neon)">ALLEY</text>
+          <text x="200" y="74" text-anchor="middle" class="neon__text neon__text--lime" filter="url(#neon)">GOLF</text>
+        </g>
+        <!-- neon arrow on right wall, pointing into the alley -->
+        <g class="neon neon--arrow" transform="matrix(1 -.5 0 1 1180 700)" filter="url(#neon)">
+          <path d="M150 0 H0 M40 -30 L0 0 L40 30" stroke="#ff4f7b" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <p class="kicker reveal">Crazy golf · Cocktails · Late</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span>Eighteen holes.</span></span>
+          <span class="line"><span>One alley.</span></span>
+          <span class="line line--neon"><span>No dress code.</span></span>
+        </h1>
+        <div class="hero__row reveal" style="--d:.5s">
+          <p class="hero__lede">Two neon-lit nine-hole courses tucked down a back street, with a bar at the end of every round.</p>
+          <div class="hero__actions">
+            <a class="btn btn--neon btn--lg" href="#book">Book a tee time <span aria-hidden="true">→</span></a>
+            <a class="btn btn--line" href="#courses">See the courses</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================= TICKER ================================= -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Hole in one</span><i>✦</i><span>Mind the bin</span><i>✦</i><span>Last orders at the 18th</span><i>✦</i><span>Putters provided</span><i>✦</i><span>Birdies welcome</span><i>✦</i>
+        <span>Hole in one</span><i>✦</i><span>Mind the bin</span><i>✦</i><span>Last orders at the 18th</span><i>✦</i><span>Putters provided</span><i>✦</i><span>Birdies welcome</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ================================= COURSES ================================= -->
+    <section class="courses container" id="courses" aria-labelledby="courses-title">
+      <header class="section-head">
+        <p class="kicker reveal">The courses</p>
+        <h2 class="section-title reveal" id="courses-title">Two nines,<br><span class="hl">zero fairways.</span></h2>
+      </header>
+
+      <div class="course-tabs" role="tablist" aria-label="Choose a course" data-course-tabs></div>
+      <div class="course" data-course-panel role="tabpanel" tabindex="0">
+        <div class="course__intro">
+          <h3 class="course__name" data-course-name></h3>
+          <p class="course__desc" data-course-desc></p>
+          <dl class="course__stats">
+            <div><dt>Holes</dt><dd data-course-holes></dd></div>
+            <div><dt>Par</dt><dd data-course-par></dd></div>
+            <div><dt>Round</dt><dd data-course-time></dd></div>
+          </dl>
+        </div>
+        <ol class="holes" data-holes></ol>
+      </div>
+    </section>
+
+    <!-- ================================= WARM-UP GAME ================================= -->
+    <section class="warmup" id="warmup" aria-labelledby="warmup-title">
+      <div class="container warmup__grid">
+        <div class="warmup__copy">
+          <p class="kicker reveal">Warm-up green</p>
+          <h2 class="section-title reveal" id="warmup-title">Practise<br><span class="hl">your putt.</span></h2>
+          <p class="reveal">Drag back from the ball, aim and let go. On a keyboard, use the arrow keys to aim and set power, then press Space.</p>
+          <dl class="scorecard reveal">
+            <div><dt>Hole</dt><dd data-game-hole>1 / 3</dd></div>
+            <div><dt>Strokes</dt><dd data-game-strokes>0</dd></div>
+            <div><dt>Par</dt><dd data-game-par>2</dd></div>
+          </dl>
+          <div class="warmup__buttons">
+            <button class="btn btn--line" type="button" data-game-reset>Restart hole</button>
+          </div>
+        </div>
+        <div class="green reveal">
+          <canvas class="green__canvas" width="900" height="560" tabindex="0" role="img"
+                  aria-label="Mini putting game. Use arrow keys to aim and set power, Space to putt." data-game></canvas>
+          <p class="green__msg" role="status" aria-live="polite" data-game-msg></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================= BAR ================================= -->
+    <section class="bar container" id="bar" aria-labelledby="bar-title">
+      <header class="section-head section-head--split">
+        <div>
+          <p class="kicker reveal">Food &amp; drink</p>
+          <h2 class="section-title reveal" id="bar-title">The 19th hole<br><span class="hl">is a bar.</span></h2>
+        </div>
+        <p class="section-intro reveal">Cocktails named after bad shots, cold beer on tap and street food you can eat with one hand while holding a putter with the other.</p>
+      </header>
+      <div class="menu">
+        <article class="menu-card reveal">
+          <p class="menu-card__tag">Cocktails</p>
+          <ul>
+            <li><span>The Mulligan</span><small>Rum, lime, ginger, a second chance</small></li>
+            <li><span>Water Hazard</span><small>Gin, blue curaçao, tonic</small></li>
+            <li><span>Hole in Lime</span><small>Tequila, lime, agave, salt</small></li>
+          </ul>
+        </article>
+        <article class="menu-card menu-card--pink reveal" style="--d:.08s">
+          <p class="menu-card__tag">Street food</p>
+          <ul>
+            <li><span>Loaded fries</span><small>Cheese sauce, pickled chilli</small></li>
+            <li><span>Smash burger</span><small>Double patty, house sauce</small></li>
+            <li><span>Bao trio</span><small>Pork belly, chicken, mushroom</small></li>
+          </ul>
+        </article>
+        <article class="menu-card menu-card--warm reveal" style="--d:.16s">
+          <p class="menu-card__tag">Zero proof</p>
+          <ul>
+            <li><span>Fore-ever Young</span><small>Seedlip, elderflower, soda</small></li>
+            <li><span>Par Tea</span><small>Iced peach tea, mint</small></li>
+            <li><span>Draft sodas</span><small>Cola, lemonade, root beer</small></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================================= GROUPS ================================= -->
+    <section class="groups" id="groups" aria-labelledby="groups-title">
+      <div class="container groups__grid">
+        <div>
+          <p class="kicker reveal">Groups &amp; events</p>
+          <h2 class="section-title reveal" id="groups-title">Birthdays, leaving dos,<br><span class="hl">team “offsites”.</span></h2>
+        </div>
+        <ul class="perks">
+          <li class="reveal"><b>Group bookings</b><span>Tee times staggered so bigger parties play together without queueing.</span></li>
+          <li class="reveal" style="--d:.06s"><b>Food &amp; drink packages</b><span>Pre-order platters and drinks tokens so the round never stops.</span></li>
+          <li class="reveal" style="--d:.12s"><b>Private hire</b><span>Take over a whole course, or the whole alley, for the night.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================================= BOOKING ================================= -->
+    <section class="book" id="book" aria-labelledby="book-title">
+      <div class="container book__grid">
+        <div class="book__intro">
+          <p class="kicker reveal">Book</p>
+          <h2 class="section-title reveal" id="book-title">Grab a<br><span class="hl">tee time.</span></h2>
+          <p class="reveal">Pick a course, a day and a time. We’ll confirm by email.</p>
+
+          <aside class="ticket reveal" aria-label="Booking summary">
+            <div class="ticket__top">
+              <span class="ticket__brand">Alley Golf</span>
+              <span class="ticket__no">Admit <b data-sum-players>2</b></span>
+            </div>
+            <dl class="ticket__rows">
+              <div><dt>Course</dt><dd data-sum-course>—</dd></div>
+              <div><dt>Date</dt><dd data-sum-date>—</dd></div>
+              <div><dt>Time</dt><dd data-sum-time>—</dd></div>
+              <div class="ticket__total"><dt>Total</dt><dd data-sum-total>—</dd></div>
+            </dl>
+            <p class="ticket__fine">Pay on arrival. Prices are per player, per round.</p>
+          </aside>
+
+          <ul class="visit" data-visit hidden></ul>
+        </div>
+
+        <form class="form" id="book-form" novalidate data-book-form>
+          <fieldset class="field field--group">
+            <legend>Course</legend>
+            <div class="seg" data-course-options></div>
+            <p class="field__error" id="b-course-err"></p>
+          </fieldset>
+
+          <div class="form__row form__row--2">
+            <div class="field">
+              <label for="b-date">Date</label>
+              <input id="b-date" name="date" type="date" required aria-describedby="b-date-err">
+              <p class="field__error" id="b-date-err"></p>
+            </div>
+            <div class="field">
+              <label for="b-time">Time</label>
+              <select id="b-time" name="time" required aria-describedby="b-time-err">
+                <option value="">Choose a date first</option>
+              </select>
+              <p class="field__error" id="b-time-err"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="b-players">Players</label>
+            <div class="stepper">
+              <button type="button" class="stepper__btn" data-step="-1" aria-label="One fewer player">−</button>
+              <input id="b-players" name="players" type="number" inputmode="numeric" min="1" max="8" value="2" required aria-describedby="b-players-err b-players-hint">
+              <button type="button" class="stepper__btn" data-step="1" aria-label="One more player">+</button>
+            </div>
+            <p class="field__hint" id="b-players-hint">Up to 8 per booking. Bigger group? Mention it below.</p>
+            <p class="field__error" id="b-players-err"></p>
+          </div>
+
+          <div class="form__row form__row--2">
+            <div class="field">
+              <label for="b-name">Name</label>
+              <input id="b-name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="b-name-err">
+              <p class="field__error" id="b-name-err"></p>
+            </div>
+            <div class="field">
+              <label for="b-email">Email</label>
+              <input id="b-email" name="email" type="email" autocomplete="email" required maxlength="160" aria-describedby="b-email-err">
+              <p class="field__error" id="b-email-err"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="b-phone">Phone <span class="field__opt">(optional)</span></label>
+            <input id="b-phone" name="phone" type="tel" autocomplete="tel" maxlength="32" aria-describedby="b-phone-err">
+            <p class="field__error" id="b-phone-err"></p>
+          </div>
+
+          <div class="field">
+            <label for="b-notes">Anything we should know? <span class="field__opt">(optional)</span></label>
+            <textarea id="b-notes" name="notes" rows="3" maxlength="2000" aria-describedby="b-notes-err"></textarea>
+            <p class="field__error" id="b-notes-err"></p>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="b-company">Company</label>
+            <input id="b-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form__footer">
+            <button class="btn btn--neon btn--lg btn--submit" type="submit" data-submit>
+              <span class="btn__label">Request booking</span>
+              <span class="btn__spinner" aria-hidden="true"></span>
+            </button>
+            <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================= FOOTER ================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__big" aria-hidden="true">Fore!</p>
+      <div class="site-footer__cols">
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#bar">Food &amp; drink</a></li>
+            <li><a href="#groups">Groups</a></li>
+            <li><a href="#book">Book a tee time</a></li>
+          </ul>
+        </nav>
+        <ul class="site-footer__visit" data-footer-visit></ul>
+      </div>
+      <p class="site-footer__legal">© <span data-year></span> Alley Golf</p>
+    </div>
+  </footer>
+</body>
+</html>
