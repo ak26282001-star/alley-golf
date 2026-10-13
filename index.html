@@ -1,414 +1,2473 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Alley Golf: Mini Golf, Drinks &amp; Late Nights</title>
-  <meta name="description" content="Alley Golf is crazy golf after dark: two neon-lit nine-hole courses, cocktails and street food. Book a tee time online for friends, dates and groups.">
-  <meta name="theme-color" content="#0b0d12">
-  <meta name="color-scheme" content="dark">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alley Pond Golf Center · Douglaston, Queens</title>
+<meta name="description" content="Alley Pond Golf Center in Douglaston, Queens. Est. 1949, reimagined 2026. Ball-tracking hitting bays, golf simulators, lessons from Knox Golf Academy, Sichuan and American dining, and events.">
+<meta name="theme-color" content="#0f3b2a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230f3b2a'/%3E%3Ccircle cx='28' cy='38' r='12' fill='%23f6f0e1'/%3E%3Cpath d='M38 10v30' stroke='%23c9a24a' stroke-width='3'/%3E%3Cpath d='M38 10l14 6-14 6z' fill='%23c9a24a'/%3E%3C/svg%3E">
+<style>
+/* =========================================================
+   Tokens
+   ========================================================= */
+:root{
+  --green-950:#0a2a1e;
+  --green-900:#0f3b2a;
+  --green-800:#164a35;
+  --green-700:#1d5c41;
+  --fairway:#2f7d4f;
+  --fairway-light:#4f9e68;
+  --cream:#f6f0e1;
+  --cream-2:#ece3cc;
+  --cream-3:#ddd1b2;
+  --gold:#c9a24a;
+  --gold-bright:#e8c56a;
+  --ink:#14251c;
+  --ink-soft:#43574b;
+  --tracer:#ffb340;
+  --radius:18px;
+  --header-h:68px;
+  --wrap:1160px;
+  --gutter:clamp(16px,5vw,48px);
+  --shadow:0 18px 40px -18px rgba(10,42,30,.35);
+  --font-head:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--font-body);font-size:17px;line-height:1.6;
+  overflow-x:clip;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-head);line-height:1.05;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:900;text-transform:uppercase}
+h3{font-size:1.2rem;font-weight:800}
+p{margin:0 0 1em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gutter)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--gold);color:var(--green-950);padding:10px 14px;border-radius:10px;font-weight:600}
+.skip:focus{top:12px}
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Alley Golf">
-  <meta property="og:title" content="Alley Golf: Mini Golf, Drinks &amp; Late Nights">
-  <meta property="og:description" content="Two neon-lit nine-hole courses, cocktails and street food. Book a tee time online.">
-  <!-- Social crawlers need an absolute URL: replace with https://YOUR-DOMAIN/assets/img/og-image.jpg before launch -->
-  <meta property="og:image" content="assets/img/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
+/* =========================================================
+   Buttons
+   ========================================================= */
+.btn{
+  --bg:var(--gold);--fg:var(--green-950);
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  min-height:46px;padding:.7em 1.3em;border-radius:999px;border:2px solid transparent;
+  background:var(--bg);color:var(--fg);font:700 .95rem/1 var(--font-head);
+  letter-spacing:.04em;text-transform:uppercase;text-decoration:none;cursor:pointer;
+  transition:transform .2s ease,background-color .2s ease,box-shadow .2s ease;
+  box-shadow:0 8px 20px -10px rgba(0,0,0,.45);
+}
+.btn:hover{transform:translateY(-2px);background:var(--gold-bright)}
+.btn--ghost{--bg:transparent;--fg:currentColor;border-color:currentColor;box-shadow:none}
+.btn--ghost:hover{background:rgba(255,255,255,.12)}
+.btn--green{--bg:var(--green-900);--fg:var(--cream)}
+.btn--green:hover{background:var(--green-700)}
 
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="assets/css/styles.css">
+/* =========================================================
+   Header
+   ========================================================= */
+.site-header{
+  position:sticky;top:0;z-index:50;height:var(--header-h);
+  background:rgba(15,59,42,.92);color:var(--cream);
+  backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid rgba(201,162,74,.25);
+}
+.site-header .wrap{height:100%;display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;min-width:0}
+.brand svg{width:38px;height:38px;flex:none}
+.brand b{font:900 1.02rem/1 var(--font-head);text-transform:uppercase;letter-spacing:.03em;display:block;white-space:nowrap}
+.brand small{display:block;font-size:.7rem;color:var(--gold-bright);letter-spacing:.14em;text-transform:uppercase;margin-top:3px;white-space:nowrap}
+.nav{display:flex;gap:4px}
+.nav a{white-space:nowrap;text-decoration:none;font-weight:500;font-size:.92rem;padding:8px 10px;border-radius:8px;opacity:.88}
+.nav a:hover{opacity:1;background:rgba(255,255,255,.08)}
+.site-header .btn{min-height:40px;padding:.6em 1.1em;font-size:.85rem}
+.menu-btn{display:none;background:none;border:0;color:inherit;width:44px;height:44px;border-radius:10px;cursor:pointer}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:22px;height:2px;background:currentColor;margin:auto;position:relative;transition:transform .25s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-7px}.menu-btn span::after{top:7px}
+.menu-open .menu-btn span{background:transparent}
+.menu-open .menu-btn span::before{transform:translateY(7px) rotate(45deg)}
+.menu-open .menu-btn span::after{transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:1060px){
+  .nav{position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;gap:0;padding:8px var(--gutter) 20px;
+    background:var(--green-900);border-bottom:1px solid rgba(201,162,74,.3);
+    transform:translateY(-12px);opacity:0;visibility:hidden;transition:.25s ease}
+  .nav a{padding:14px 4px;border-bottom:1px solid rgba(246,240,225,.08);font-size:1.05rem}
+  .menu-open .nav{transform:none;opacity:1;visibility:visible}
+  .menu-btn{display:block}
+}
+.site-header .btn{white-space:nowrap}
+@media (max-width:560px){
+  .site-header .wrap{gap:10px}
+  .brand small{display:none}
+  .brand svg{width:34px;height:34px}
+  .brand b{font-size:.82rem;line-height:1.1;white-space:normal;max-width:8.5em}
+  .site-header .btn{padding:.6em .95em;font-size:.78rem}
+}
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EntertainmentBusiness",
-    "name": "Alley Golf",
-    "description": "Neon-lit crazy golf with cocktails and street food."
-  }
-  </script>
+/* =========================================================
+   Hero
+   ========================================================= */
+.hero{
+  position:relative;overflow:hidden;color:var(--cream);
+  height:calc(100svh - var(--header-h));min-height:560px;max-height:1000px;
+  background:linear-gradient(180deg,#22183f 0%,#4b2a5c 22%,#a8486a 46%,#ec7c4a 66%,#f7b765 80%,#f9d48a 100%);
+  isolation:isolate;
+}
+.hero-scene{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero-copy{
+  position:absolute;z-index:2;left:0;right:0;top:9%;
+  text-align:center;padding-inline:var(--gutter);pointer-events:none;
+}
+.hero-copy a,.hero-copy button{pointer-events:auto}
+.hero-title{
+  font-size:clamp(2.3rem,7.4vw,6.4rem);font-weight:900;text-transform:uppercase;letter-spacing:.01em;
+  line-height:.98;text-shadow:0 4px 24px rgba(40,10,40,.45);
+}
+.hero-title .line{display:inline-block;white-space:nowrap}
+.ch{display:inline-block;transition:opacity .35s ease,transform .45s cubic-bezier(.2,1.6,.4,1),color .6s ease}
+.hero-anim .ch{opacity:0;transform:translateY(.35em) scale(.7)}
+.hero-anim .ch.lit{opacity:1;transform:none;animation:glyphGlow 1.1s ease-out}
+@keyframes glyphGlow{
+  0%{color:#fff3c4;text-shadow:0 0 18px var(--tracer),0 0 40px var(--tracer)}
+  100%{color:var(--cream);text-shadow:0 4px 24px rgba(40,10,40,.45)}
+}
+.tagline{
+  margin:18px 0 0;font:700 clamp(1rem,2.2vw,1.45rem)/1.2 var(--font-head);
+  letter-spacing:.18em;text-transform:uppercase;color:#fff4d6;
+}
+.tagline span{color:var(--gold-bright)}
+.hero-sub{margin:8px 0 0;font-size:clamp(.85rem,1.6vw,1rem);opacity:.9;letter-spacing:.04em}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.hero-ctas .btn--ghost{color:var(--cream)}
+.hero-anim .fade-late{opacity:0;transform:translateY(12px);transition:opacity .9s ease,transform .9s ease}
+.hero-anim.hero-done .fade-late{opacity:1;transform:none}
+.hero-anim.hero-done .fade-late.d2{transition-delay:.25s}
+.hero-anim.hero-done .fade-late.d3{transition-delay:.5s}
+.replay{
+  position:absolute;z-index:3;right:var(--gutter);bottom:20px;
+  display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 16px;border-radius:999px;
+  background:rgba(10,42,30,.72);color:var(--cream);border:1px solid rgba(232,197,106,.6);
+  font:700 .8rem/1 var(--font-head);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+  backdrop-filter:blur(6px);transition:opacity .4s,transform .2s,background-color .2s;
+}
+.replay:hover{background:rgba(10,42,30,.9);transform:translateY(-2px)}
+.replay svg{width:16px;height:16px}
+.replay[hidden]{display:inline-flex;opacity:0;pointer-events:none}
+.scroll-cue{position:absolute;z-index:3;left:50%;bottom:18px;transform:translateX(-50%);color:var(--cream);opacity:.8;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:4px}
+.scroll-cue i{width:2px;height:26px;background:linear-gradient(var(--cream),transparent);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+@media (max-width:720px){
+  .hero{height:auto;min-height:0;max-height:none;padding-bottom:calc(100vw * 520 / 1280 + 64px)}
+  .hero-copy{position:relative;top:auto;padding-top:44px}
+  .scroll-cue{display:none}
+  .replay{bottom:14px}
+}
+@media (max-height:620px) and (min-width:721px){.hero-copy{top:5%}.hero-ctas{margin-top:14px}}
 
-  <script src="assets/js/config.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+/* scene pieces */
+.cloud{animation:drift 60s linear infinite}
+.cloud.c2{animation-duration:85s;animation-delay:-30s}
+.cloud.c3{animation-duration:110s;animation-delay:-70s}
+@keyframes drift{from{transform:translateX(-300px)}to{transform:translateX(1900px)}}
+.train{animation:train 26s linear infinite}
+@keyframes train{0%{transform:translateX(1750px)}100%{transform:translateX(-900px)}}
+.flutter{transform-box:fill-box;transform-origin:0 50%;animation:flutter 1.4s ease-in-out infinite alternate}
+@keyframes flutter{from{transform:skewY(-6deg) scaleX(.94)}to{transform:skewY(5deg) scaleX(1.04)}}
+
+/* =========================================================
+   Rolling ball (scroll)
+   ========================================================= */
+main{position:relative}
+.roll-track{
+  position:absolute;top:0;bottom:0;z-index:20;pointer-events:none;
+  left:clamp(4px,calc((100vw - var(--wrap)) / 2 - 36px),90px);width:18px;
+}
+.roll-line{position:absolute;left:8px;top:0;bottom:0;width:2px;
+  background:repeating-linear-gradient(to bottom,rgba(29,92,65,.35) 0 6px,transparent 6px 14px)}
+.roll-fill{position:absolute;left:8px;top:0;width:2px;height:0;background:linear-gradient(var(--gold),var(--tracer));box-shadow:0 0 8px rgba(255,179,64,.7);transform-origin:top}
+.roll-stop{position:absolute;left:3px;width:12px;height:12px;border-radius:50%;background:var(--cream);border:2px solid var(--green-700);transform:translateY(-6px);transition:background-color .3s,border-color .3s}
+.roll-stop.hit{background:var(--gold);border-color:var(--gold)}
+.roll-ball{position:absolute;left:0;top:0;width:18px;height:18px;margin-top:-9px;will-change:transform;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35))}
+.roll-ball svg{width:100%;height:100%}
+@media (max-width:720px){
+  .roll-track{left:2px;width:12px}
+  .roll-line,.roll-fill{left:5px}
+  .roll-stop{left:1px;width:10px;height:10px;transform:translateY(-5px)}
+  .roll-ball{width:12px;height:12px;margin-top:-6px}
+}
+
+/* =========================================================
+   Sections
+   ========================================================= */
+.section{position:relative;padding:clamp(72px,10vw,128px) 0;scroll-margin-top:var(--header-h);overflow:clip}
+.section--dark{background:var(--green-900);color:var(--cream)}
+.section--deep{background:var(--green-950);color:var(--cream)}
+.section--sand{background:var(--cream-2)}
+.section .wrap{position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 .78rem/1 var(--font-head);letter-spacing:.2em;text-transform:uppercase;color:var(--fairway);margin-bottom:14px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold)}
+.section--dark .eyebrow,.section--deep .eyebrow{color:var(--gold-bright)}
+.lede{font-size:clamp(1.05rem,1.7vw,1.22rem);color:var(--ink-soft);max-width:62ch}
+.section--dark .lede,.section--deep .lede{color:rgba(246,240,225,.82)}
+.head{margin-bottom:clamp(28px,4vw,48px)}
+.head h2{margin-bottom:16px}
+.grid{display:grid;gap:clamp(16px,2vw,24px)}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center}
+@media (max-width:880px){.split{grid-template-columns:1fr}}
+
+/* reveal: sections slide in when the ball arrives */
+.motion .reveal{opacity:0;transform:translateX(-36px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.9,.25,1);transition-delay:calc(var(--d,0) * 90ms)}
+.motion .arrived .reveal{opacity:1;transform:none}
+
+/* parallax decorations */
+.deco{position:absolute;z-index:1;pointer-events:none;will-change:transform}
+.deco svg{width:100%;height:100%;overflow:visible}
+.deco--tree{color:var(--fairway);opacity:.14}
+.deco--cloud{color:var(--green-700);opacity:.08}
+.section--dark .deco--tree,.section--deep .deco--tree{color:var(--cream);opacity:.06}
+.section--dark .deco--cloud,.section--deep .deco--cloud{color:var(--cream);opacity:.06}
+.deco--flag{opacity:.55}
+.deco--marker{opacity:.5}
+@media (max-width:720px){.deco.hide-sm{display:none}}
+
+/* cards */
+.card{
+  position:relative;background:#fffdf7;border:1px solid var(--cream-3);border-radius:var(--radius);
+  padding:24px;box-shadow:var(--shadow);transition:transform .3s ease,box-shadow .3s ease;
+}
+.card:hover{transform:translateY(-4px)}
+.card p{color:var(--ink-soft);margin:8px 0 0;font-size:.98rem}
+.section--dark .card,.section--deep .card{background:rgba(246,240,225,.05);border-color:rgba(246,240,225,.14);box-shadow:none}
+.section--dark .card p,.section--deep .card p{color:rgba(246,240,225,.78)}
+.icon{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--green-900);color:var(--gold-bright);margin-bottom:14px}
+.icon svg{width:24px;height:24px}
+.section--dark .icon,.section--deep .icon{background:rgba(232,197,106,.14)}
+
+/* about */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.stat{background:var(--green-900);color:var(--cream);border-radius:var(--radius);padding:22px 20px;position:relative;overflow:hidden}
+.stat b{display:block;font:900 clamp(1.9rem,4vw,2.6rem)/1 var(--font-head);color:var(--gold-bright)}
+.stat span{display:block;margin-top:8px;font-size:.9rem;opacity:.85;line-height:1.35}
+.stat:nth-child(2),.stat:nth-child(3){background:var(--fairway)}
+.stat:nth-child(2) b,.stat:nth-child(3) b{color:var(--cream)}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pill{border:1px solid var(--cream-3);background:#fffdf7;border-radius:999px;padding:6px 14px;font-size:.88rem;font-weight:500}
+
+/* driving range */
+.range-grid{grid-template-columns:repeat(3,1fr)}
+.range-grid .card{padding-top:84px;overflow:hidden}
+.tracer-mini{position:absolute;left:18px;top:14px;width:calc(100% - 36px);height:62px}
+.tracer-mini .arc{fill:none;stroke:var(--tracer);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s cubic-bezier(.3,.6,.3,1);filter:drop-shadow(0 0 4px rgba(255,179,64,.8))}
+.tracer-mini .gnd{stroke:var(--cream-3);stroke-width:2;stroke-dasharray:3 6}
+.tracer-mini .dot{fill:var(--cream);stroke:var(--ink);stroke-width:1;opacity:0;transition:opacity .2s .75s}
+.tracer-mini .tee{fill:var(--ink);opacity:.5}
+.range-grid .card:hover .arc,.range-grid .card:focus-within .arc,.range-grid .card:focus .arc{stroke-dashoffset:0}
+.range-grid .card:hover .dot,.range-grid .card:focus .dot{opacity:1}
+.range-grid .card:not(:hover):not(:focus) .dot{transition-delay:0s}
+.range-grid .card .yards{position:absolute;right:20px;top:16px;font:800 .75rem/1 var(--font-head);letter-spacing:.12em;color:var(--fairway);opacity:0;transition:opacity .3s .7s}
+.range-grid .card:hover .yards,.range-grid .card:focus .yards{opacity:1}
+.range-grid .card.wide{grid-column:span 2}
+@media (max-width:880px){.range-grid{grid-template-columns:1fr 1fr}.range-grid .card.wide{grid-column:span 2}}
+@media (max-width:560px){.range-grid{grid-template-columns:1fr}.range-grid .card.wide{grid-column:auto}}
+@media (hover:none){.range-grid .card .arc{stroke-dashoffset:0}.range-grid .card .dot,.range-grid .card .yards{opacity:1}}
+
+/* simulators */
+.sim{position:relative;max-width:620px;margin-inline:auto;width:100%}
+.sim-bezel{background:linear-gradient(160deg,#2a2f2c,#101412);border-radius:22px;padding:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08)}
+.sim-display{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#050806}
+.sim-content{position:absolute;inset:0;transform:scaleY(.004) scaleX(0);opacity:0;filter:brightness(3)}
+.sim.on .sim-content{animation:powerOn 1.3s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes powerOn{
+  0%{transform:scaleY(.004) scaleX(0);opacity:1;filter:brightness(4)}
+  25%{transform:scaleY(.004) scaleX(1);opacity:1;filter:brightness(4)}
+  55%{transform:scaleY(1) scaleX(1);filter:brightness(2)}
+  100%{transform:none;opacity:1;filter:brightness(1)}
+}
+.sim-content svg{width:100%;height:100%}
+.sim-hud{position:absolute;left:10px;top:10px;display:flex;gap:6px;flex-wrap:wrap}
+.sim-hud span{background:rgba(5,8,6,.65);color:var(--cream);border:1px solid rgba(232,197,106,.4);border-radius:6px;padding:3px 8px;font:700 .68rem/1.3 var(--font-head);letter-spacing:.08em;text-transform:uppercase}
+.sim-scan{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.035) 0 2px,transparent 2px 4px);pointer-events:none}
+.sim-led{position:absolute;right:26px;bottom:5px;width:6px;height:6px;border-radius:50%;background:#3a3a3a;transition:background-color .3s .1s,box-shadow .3s}
+.sim.on .sim-led{background:#5dff8a;box-shadow:0 0 8px #5dff8a}
+.sim-stand{width:120px;height:44px;margin:0 auto;background:linear-gradient(#1a1f1c,#0c0f0d);clip-path:polygon(38% 0,62% 0,72% 80%,100% 82%,100% 100%,0 100%,0 82%,28% 80%)}
+.sim .shot{fill:none;stroke:var(--tracer);stroke-width:3;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420}
+.sim.on .shot{animation:draw 2.2s 1.4s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sim-list{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.sim-list li{display:flex;gap:12px;align-items:flex-start}
+.sim-list li::before{content:"";flex:none;width:10px;height:10px;margin-top:.55em;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(232,197,106,.18)}
+
+/* mini golf */
+.mini-wrap{position:relative;background:linear-gradient(160deg,var(--fairway),var(--green-700));border-radius:28px;padding:clamp(22px,4vw,40px);color:var(--cream);box-shadow:var(--shadow)}
+.mini-wrap svg.putt{width:100%;height:auto}
+.badge{position:absolute;right:-14px;top:-30px;width:132px;height:132px;z-index:3}
+.badge .spin{animation:spin 16s linear infinite;transform-origin:66px 66px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:560px){.badge{width:104px;height:104px;right:-6px;top:-38px}}
+.putter{transform-box:fill-box;transform-origin:50% 0}
+.mini.play .putter{animation:putter 4.2s ease-in-out infinite}
+.mini.play .pball{animation:pball 4.2s infinite}
+.mini.play .pflag{animation:pflag 4.2s infinite;transform-box:fill-box;transform-origin:0 0}
+.mini.play .plink{animation:plink 4.2s infinite}
+@keyframes putter{0%,8%{transform:rotate(0)}18%{transform:rotate(16deg)}24%{transform:rotate(-10deg)}34%,100%{transform:rotate(0)}}
+@keyframes pball{
+  0%,23%{transform:translate(0,0) scale(1);opacity:1;animation-timing-function:cubic-bezier(.15,.6,.35,1)}
+  60%{transform:translate(196px,0) scale(1);opacity:1}
+  67%{transform:translate(198px,8px) scale(.55);opacity:0}
+  92%{transform:translate(198px,8px) scale(.55);opacity:0}
+  96%{transform:translate(0,0) scale(1);opacity:0}
+  100%{transform:translate(0,0) scale(1);opacity:1}
+}
+@keyframes pflag{0%,64%{transform:rotate(0)}70%{transform:rotate(-9deg)}76%{transform:rotate(6deg)}82%,100%{transform:rotate(0)}}
+@keyframes plink{0%,63%{opacity:0;transform:translateY(6px)}68%,82%{opacity:1;transform:none}90%,100%{opacity:0;transform:translateY(-6px)}}
+.plink{opacity:0}
+
+/* lessons */
+.lesson-grid{grid-template-columns:repeat(4,1fr)}
+@media (max-width:980px){.lesson-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.lesson-grid{grid-template-columns:1fr}}
+.knox{display:flex;align-items:center;gap:16px;margin-top:28px;padding:18px 22px;border-radius:var(--radius);background:var(--green-900);color:var(--cream)}
+.knox b{font-family:var(--font-head);text-transform:uppercase;letter-spacing:.06em;color:var(--gold-bright)}
+.knox p{margin:0}
+.knox .btn{margin-left:auto;flex:none}
+@media (max-width:640px){.knox{flex-direction:column;align-items:flex-start}.knox .btn{margin-left:0}}
+
+/* restaurant */
+.menu-card{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(18px,3vw,36px);background:var(--cream);color:var(--ink);border-radius:24px;padding:clamp(24px,4vw,44px);box-shadow:0 30px 60px -30px rgba(0,0,0,.7);position:relative}
+.menu-card::before{content:"";position:absolute;inset:10px;border:1px solid var(--cream-3);border-radius:18px;pointer-events:none}
+.menu-card h3{font-size:1.4rem;text-transform:uppercase;letter-spacing:.04em}
+.menu-card .kicker{font:700 .72rem/1 var(--font-head);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.menu-card ul{list-style:none;padding:0;margin:14px 0 0}
+.menu-card li{padding:10px 0;border-bottom:1px dashed var(--cream-3);color:var(--ink-soft)}
+.menu-card li:last-child{border:0}
+.menu-card .divider{width:1px;background:var(--cream-3);position:relative}
+.menu-card .divider span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--cream);padding:8px 0;font:900 1.1rem/1 var(--font-head);color:var(--gold)}
+.sichuan h3{color:#a3271f}
+.chili{display:inline-flex;gap:2px;vertical-align:middle;margin-left:6px}
+.chili svg{width:14px;height:14px;color:#c0352a}
+@media (max-width:760px){.menu-card{grid-template-columns:1fr}.menu-card .divider{height:1px;width:auto}}
+
+/* pro shop + events */
+.shop{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,48px);align-items:center}
+.shop-tag{width:clamp(120px,18vw,180px);aspect-ratio:1;border-radius:50%;background:var(--green-900);color:var(--gold-bright);display:grid;place-items:center;box-shadow:var(--shadow)}
+.shop-tag svg{width:56%}
+.shop-cats{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+@media (max-width:620px){.shop{grid-template-columns:1fr}}
+.event-grid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:880px){.event-grid{grid-template-columns:1fr}}
+.event-grid .card{overflow:hidden}
+.event-grid .card .num{position:absolute;right:16px;top:8px;font:900 4rem/1 var(--font-head);color:var(--cream-2)}
+.section--sand .card .num{color:var(--cream-2)}
+
+/* hours + pricing */
+.info-grid{grid-template-columns:1fr 1.4fr}
+@media (max-width:880px){.info-grid{grid-template-columns:1fr}}
+.hours-table{width:100%;border-collapse:collapse;margin-top:6px}
+.hours-table td{padding:10px 0;border-bottom:1px solid rgba(246,240,225,.12)}
+.hours-table td:last-child{text-align:right;font-weight:600}
+.notice{border:1px dashed rgba(232,197,106,.55);border-radius:14px;padding:14px 16px;font-size:.95rem;background:rgba(232,197,106,.07)}
+.notice a{color:var(--gold-bright);font-weight:600}
+.price-grid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:640px){.price-grid{grid-template-columns:1fr}}
+.price-card h3{font-size:1.05rem;text-transform:uppercase;letter-spacing:.05em}
+.price-card .amt{font:900 1.6rem/1 var(--font-head);color:var(--gold-bright);margin:14px 0 6px}
+.price-card .amt small{font-size:.8rem;font-weight:600;color:rgba(246,240,225,.7);letter-spacing:.04em}
+
+/* contact */
+.contact-grid{grid-template-columns:.9fr 1.1fr;align-items:stretch}
+@media (max-width:880px){.contact-grid{grid-template-columns:1fr}}
+.addr{font-style:normal;font-size:1.15rem;line-height:1.5;margin:6px 0 18px}
+.addr a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold)}
+.contact-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.map{border-radius:24px;overflow:hidden;min-height:340px;box-shadow:var(--shadow);border:1px solid var(--cream-3);background:var(--cream-2)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+/* footer */
+.site-footer{background:var(--green-950);color:var(--cream);padding:56px 0 34px}
+.foot{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start}
+.foot .brand small{display:block}
+.socials{display:flex;gap:10px}
+.socials a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(246,240,225,.25);transition:background-color .2s,border-color .2s}
+.socials a:hover{background:var(--gold);border-color:var(--gold);color:var(--green-950)}
+.socials svg{width:20px;height:20px}
+.managed{margin-top:28px;padding-top:22px;border-top:1px solid rgba(246,240,225,.12);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.88rem;opacity:.85}
+.managed b{color:var(--gold-bright)}
+
+/* =========================================================
+   Interactive 3D bay
+   ========================================================= */
+.bay3d{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}
+@media (max-width:960px){.bay3d{grid-template-columns:minmax(0,1fr)}}
+.bay3d-stage{position:relative;min-width:0;border-radius:24px;overflow:hidden;aspect-ratio:16/10;background:linear-gradient(#4b2a5c,#ec7c4a 60%,#2f7d4f 61%,#1d5c41);box-shadow:0 30px 60px -30px rgba(0,0,0,.7);border:1px solid rgba(232,197,106,.25)}
+@media (max-width:720px){.bay3d-stage{aspect-ratio:4/5}}
+.bay3d-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab}
+.bay3d-stage canvas:active{cursor:grabbing}
+.bay3d-hint{position:absolute;left:14px;top:14px;background:rgba(10,42,30,.6);color:var(--cream);border-radius:999px;padding:6px 12px;font-size:.78rem;letter-spacing:.04em;backdrop-filter:blur(4px);transition:opacity .6s;pointer-events:none}
+.bay3d-hint.gone{opacity:0}
+.bay3d-fallback{display:none;position:absolute;inset:0;place-items:center;text-align:center;padding:24px;color:var(--cream)}
+.bay3d.no-3d canvas,.bay3d.no-3d .bay3d-hint{display:none}
+.bay3d.no-3d .bay3d-fallback{display:grid}
+.bay3d-controls{position:absolute;left:0;right:0;bottom:16px;display:flex;justify-content:center;align-items:center;gap:14px;padding:0 16px;flex-wrap:wrap}
+.swing-btn{min-width:170px;user-select:none;-webkit-user-select:none;touch-action:none}
+.swing-btn:disabled{opacity:.6;cursor:default;transform:none}
+.swing-btn.charging{background:var(--gold-bright);transform:scale(.97)}
+.power{position:relative;width:150px;height:14px;border-radius:999px;background:rgba(10,42,30,.65);border:1px solid rgba(232,197,106,.55);overflow:hidden}
+.power i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,#6bc286,var(--gold-bright) 60%,#ff7a3d)}
+.power span{position:absolute;inset:0;display:grid;place-items:center;font:700 .6rem/1 var(--font-head);letter-spacing:.18em;text-transform:uppercase;color:var(--cream);mix-blend-mode:difference}
+.shot-panel{background:rgba(246,240,225,.05);border:1px solid rgba(246,240,225,.14);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.shot-top{display:flex;justify-content:space-between;align-items:center}
+.shot-label{font:700 .7rem/1 var(--font-head);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-bright)}
+.shot-num{font-size:.8rem;opacity:.75}
+.shot-carry b{display:block;font:900 clamp(3rem,7vw,4.2rem)/1 var(--font-head);color:var(--tracer);font-variant-numeric:tabular-nums}
+.shot-carry span{font-size:.85rem;opacity:.75;text-transform:uppercase;letter-spacing:.1em}
+.shot-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}
+.shot-grid div{background:rgba(246,240,225,.06);border-radius:12px;padding:10px 12px;transition:background-color .4s}
+.shot-grid dt{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.shot-grid dd{margin:2px 0 0;font:800 1.1rem/1.2 var(--font-head);font-variant-numeric:tabular-nums}
+.shot-panel.flash .shot-grid div{background:rgba(255,179,64,.18)}
+.shot-history ol{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.shot-history li{display:grid;grid-template-columns:28px 1fr auto;gap:8px;align-items:center;font-size:.82rem}
+.shot-history li.empty{display:block;opacity:.6}
+.shot-history li i{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--tracer))}
+@media (max-width:960px){.shot-panel{display:grid;grid-template-columns:auto 1fr;gap:14px 20px;align-items:start}.shot-top,.shot-history{grid-column:1/-1}.shot-grid{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:560px){.shot-panel{grid-template-columns:1fr}.shot-grid{grid-template-columns:1fr 1fr}}
+
+/* =========================================================
+   Booking
+   ========================================================= */
+.booker{display:grid;grid-template-columns:1fr 320px;gap:clamp(18px,3vw,32px);align-items:start}
+@media (max-width:900px){.booker{grid-template-columns:1fr}}
+.booker-steps{display:grid;gap:22px;min-width:0}
+.booker fieldset{border:0;margin:0;padding:0;min-width:0}
+.booker legend{display:flex;align-items:center;gap:10px;font:800 1.05rem/1.2 var(--font-head);margin-bottom:12px;padding:0}
+.booker legend span{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--green-900);color:var(--gold-bright);font-size:.85rem}
+.svc-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:620px){.svc-row{grid-template-columns:1fr}}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.opt label{display:block;cursor:pointer;background:#fffdf7;border:2px solid var(--cream-3);border-radius:14px;padding:12px 14px;transition:border-color .2s,background-color .2s,transform .15s}
+.opt label:hover{border-color:var(--fairway-light)}
+.opt input:checked+label{border-color:var(--green-900);background:var(--green-900);color:var(--cream)}
+.opt input:focus-visible+label{outline:3px solid var(--gold);outline-offset:2px}
+.opt label b{display:block;font:800 1rem/1.2 var(--font-head)}
+.opt label small{display:block;opacity:.75;font-size:.82rem;margin-top:2px}
+.chip-scroll{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.chip-scroll .opt{flex:none;scroll-snap-align:start}
+.chip-scroll label{text-align:center;padding:10px 12px;min-width:66px}
+.chip-scroll label b{font-size:1.25rem}
+.chip-scroll label small{text-transform:uppercase;letter-spacing:.08em;font-size:.68rem;margin:0}
+.time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+.time-grid label{text-align:center;padding:10px 6px;font-weight:600}
+.fine{font-size:.82rem;color:var(--ink-soft);margin:10px 0 0}
+.stepper{display:inline-flex;align-items:center;border:2px solid var(--cream-3);border-radius:999px;background:#fffdf7}
+.stepper button{width:46px;height:46px;border:0;background:none;font-size:1.4rem;cursor:pointer;color:var(--green-900);border-radius:50%}
+.stepper button:disabled{opacity:.3;cursor:default}
+.stepper output{min-width:36px;text-align:center;font:800 1.2rem/1 var(--font-head)}
+.booker-summary{position:sticky;top:calc(var(--header-h) + 16px);background:var(--green-900);color:var(--cream);border-radius:24px;padding:22px;box-shadow:var(--shadow)}
+.booker-summary dl{margin:14px 0 18px;display:grid;gap:2px}
+.booker-summary dl div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(246,240,225,.12)}
+.booker-summary dt{opacity:.7}
+.booker-summary dd{margin:0;font-weight:600;text-align:right}
+.booker-summary .btn{width:100%}
+.booker-summary .btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.booker-summary .fine{color:rgba(246,240,225,.7)}
+.putt-dialog{border:0;padding:0;border-radius:28px;width:min(520px,calc(100vw - 32px));background:var(--green-900);color:var(--cream);box-shadow:0 40px 80px -20px rgba(0,0,0,.6);overflow:hidden}
+.putt-dialog::backdrop{background:rgba(10,42,30,.7);backdrop-filter:blur(4px)}
+.putt-scene{width:100%;height:auto;background:linear-gradient(#1d5c41,#164a35)}
+.putt-copy{padding:20px 24px 24px;text-align:center}
+.putt-kicker{font:700 .72rem/1 var(--font-head);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:8px}
+.putt-copy h3{font-size:1.7rem;text-transform:uppercase;font-weight:900}
+.putt-copy h3,.putt-detail,.putt-next,.putt-actions{transition:opacity .5s,transform .5s}
+.putt-dialog.rolling .putt-copy h3,.putt-dialog.rolling .putt-detail,.putt-dialog.rolling .putt-next,.putt-dialog.rolling .putt-actions{opacity:0;transform:translateY(8px)}
+.putt-detail{margin:10px 0 4px;font-weight:600}
+.putt-next{font-size:.92rem;opacity:.8}
+.putt-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.putt-actions .btn--ghost{color:var(--cream)}
+
+/* =========================================================
+   Live companion golfer
+   ========================================================= */
+.buddy{--w:170px;--h:210px;position:fixed;left:0;bottom:0;z-index:45;width:var(--w);height:var(--h);pointer-events:none;will-change:transform;transition:opacity .45s ease}
+.buddy canvas{width:100%;height:100%;display:block}
+.buddy.away{opacity:0}
+.buddy.away .buddy-hit,.buddy.away .buddy-close{pointer-events:none}
+.buddy.off{display:none}
+.buddy-hit{position:absolute;left:30%;right:30%;top:14%;bottom:2%;pointer-events:auto;background:none;border:0;border-radius:40% 40% 10% 10%;cursor:pointer}
+.buddy-close{position:absolute;top:16px;right:10px;width:30px;height:30px;border-radius:50%;border:1px solid rgba(232,197,106,.6);background:rgba(10,42,30,.85);color:var(--cream);font-size:18px;line-height:1;cursor:pointer;pointer-events:auto;opacity:0;transition:opacity .2s}
+.buddy:hover .buddy-close,.buddy-close:focus-visible{opacity:1}
+@media (hover:none){.buddy-close{opacity:.85}}
+.buddy-bubble{position:absolute;bottom:calc(100% - 22px);left:50%;width:max-content;max-width:220px;padding:9px 13px;border-radius:16px;background:var(--cream);color:var(--ink);font:600 .85rem/1.3 var(--font-body);box-shadow:0 10px 24px -10px rgba(0,0,0,.45);border:2px solid var(--green-900);opacity:0;transform:translate(-30%,6px) scale(.92);transform-origin:bottom left;transition:opacity .25s,transform .3s cubic-bezier(.2,1.5,.4,1);pointer-events:none}
+.buddy-bubble::after{content:"";position:absolute;top:100%;left:26%;border:8px solid transparent;border-top-color:var(--green-900)}
+.buddy-bubble.show{opacity:1;transform:translate(-30%,0) scale(1)}
+.buddy.right .buddy-bubble{transform:translate(-70%,6px) scale(.92);transform-origin:bottom right}
+.buddy.right .buddy-bubble.show{transform:translate(-70%,0) scale(1)}
+.buddy.right .buddy-bubble::after{left:auto;right:26%}
+.buddy-restore{position:fixed;right:14px;bottom:14px;z-index:45;width:46px;height:46px;border-radius:50%;border:2px solid var(--gold);background:var(--green-900);padding:9px;cursor:pointer;box-shadow:var(--shadow)}
+.buddy-restore svg{width:100%;height:100%}
+@media (max-width:720px){.buddy{--w:112px;--h:140px}.buddy-bubble{max-width:170px;font-size:.78rem}.buddy-close{top:6px;right:2px;width:26px;height:26px;font-size:16px}}
+@media print{.buddy,.buddy-restore{display:none}}
+
+/* =========================================================
+   Reduced motion
+   ========================================================= */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important}
+  .cloud,.train,.flutter,.badge .spin,.scroll-cue i{animation:none!important}
+  .train{transform:translateX(520px)}
+  .sim-content{transform:none;opacity:1;filter:none}
+  .sim .shot{stroke-dashoffset:0}
+  .sim-led{background:#5dff8a}
+  .roll-track{display:none}
+}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#about">Skip to content</a>
 
-  <!-- ================================= HEADER ================================= -->
-  <header class="site-header" data-header>
-    <div class="site-header__inner">
-      <a class="logo" href="#top" aria-label="Alley Golf, home">
-        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
-          <circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M14 30 V9 l12 5 -12 5" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linejoin="round"/>
-          <circle cx="26" cy="29" r="3" fill="currentColor"/>
+<!-- Shared decoration symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sym-cloud" viewBox="0 0 200 80"><path fill="currentColor" d="M30 70a26 26 0 0 1 4-51 34 34 0 0 1 63-6 28 28 0 0 1 46 10 24 24 0 0 1 37 22 22 22 0 0 1-6 25z"/></symbol>
+    <symbol id="sym-tree" viewBox="0 0 120 170"><rect x="54" y="118" width="12" height="52" rx="4" fill="currentColor"/><circle cx="60" cy="52" r="40" fill="currentColor"/><circle cx="32" cy="88" r="30" fill="currentColor"/><circle cx="88" cy="88" r="30" fill="currentColor"/><circle cx="60" cy="100" r="30" fill="currentColor"/></symbol>
+    <symbol id="sym-flag" viewBox="0 0 60 130"><ellipse cx="14" cy="124" rx="14" ry="4" fill="#1d5c41" opacity=".4"/><rect x="12" y="6" width="4" height="118" rx="2" fill="#f6f0e1" stroke="#14251c" stroke-opacity=".3"/><path class="flutter" d="M16 8l38 13-38 13z" fill="#c9a24a"/></symbol>
+    <symbol id="sym-marker" viewBox="0 0 90 120"><rect x="40" y="50" width="10" height="70" fill="#14251c" opacity=".55"/><rect x="2" y="4" width="86" height="52" rx="8" fill="#f6f0e1" stroke="#1d5c41" stroke-width="4"/></symbol>
+    <symbol id="sym-ball" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9.5" fill="#fffef8" stroke="#c7c2b4"/><g fill="#d7d1c1"><circle cx="6" cy="7" r="1.3"/><circle cx="10" cy="5" r="1.3"/><circle cx="14" cy="7.5" r="1.3"/><circle cx="7" cy="12" r="1.3"/><circle cx="12" cy="11" r="1.3"/><circle cx="10" cy="15.5" r="1.3"/></g><path d="M3 10a7 7 0 0 0 7 7" stroke="#e7a63a" stroke-width="1.2" fill="none"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Alley Pond Golf Center, home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#164a35" stroke="#c9a24a" stroke-width="2"/><circle cx="27" cy="38" r="11" fill="#f6f0e1"/><g fill="#d7d1c1"><circle cx="23" cy="35" r="1.5"/><circle cx="29" cy="33" r="1.5"/><circle cx="26" cy="41" r="1.5"/><circle cx="31" cy="39" r="1.5"/></g><path d="M40 12v28" stroke="#e8c56a" stroke-width="3"/><path d="M40 12l13 6-13 6z" fill="#e8c56a"/></svg>
+      <span><b>Alley Pond Golf Center</b><small>Est. 1949 · Reimagined 2026</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#range">Range</a>
+      <a href="#simulators">Simulators</a>
+      <a href="#mini-golf">Mini Golf</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#dining">Dining</a>
+      <a href="#events">Events</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn" href="#book" data-book="bay">Book Now</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+
+<!-- =====================================================
+     HERO — the swing
+     ===================================================== -->
+<section class="hero" id="hero" aria-label="Welcome">
+  <svg class="hero-scene" id="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#22183f"/><stop offset=".3" stop-color="#4b2a5c"/>
+        <stop offset=".58" stop-color="#a8486a"/><stop offset=".82" stop-color="#ec7c4a"/>
+        <stop offset="1" stop-color="#f7b765"/>
+      </linearGradient>
+      <radialGradient id="gSun"><stop offset="0" stop-color="#fff2c2"/><stop offset=".45" stop-color="#ffd57a"/><stop offset="1" stop-color="#ffb35a" stop-opacity="0"/></radialGradient>
+      <linearGradient id="gField" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#7b8f45"/><stop offset=".25" stop-color="#4f8a4c"/><stop offset="1" stop-color="#215d3c"/>
+      </linearGradient>
+      <linearGradient id="gDeck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a4532"/><stop offset="1" stop-color="#0c2a1e"/></linearGradient>
+      <linearGradient id="gMat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f9a5e"/><stop offset="1" stop-color="#2a7448"/></linearGradient>
+      <linearGradient id="gScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1e16"/><stop offset="1" stop-color="#05110c"/></linearGradient>
+      <filter id="fGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+
+    <!-- sky -->
+    <rect id="skyRect" x="-200" y="-200" width="2000" height="840" fill="url(#gSky)"/>
+    <g id="pxSun"><circle cx="560" cy="600" r="210" fill="url(#gSun)" opacity=".85"/><circle cx="560" cy="600" r="70" fill="#ffe2a0"/></g>
+
+    <!-- clouds -->
+    <g id="pxClouds" fill="#ffd6c2">
+      <g class="cloud"><use href="#sym-cloud" x="0" y="140" width="220" height="88" opacity=".45"/></g>
+      <g class="cloud c2"><use href="#sym-cloud" x="0" y="250" width="160" height="64" opacity=".35"/></g>
+      <g class="cloud c3 hide-mobile"><use href="#sym-cloud" x="0" y="90" width="300" height="120" opacity=".25"/></g>
+    </g>
+
+    <!-- far trees + rail embankment + train -->
+    <g id="pxTrees">
+      <path d="M-200 612 C -120 560 -60 590 0 570 C 60 550 110 585 170 565 C 230 545 280 590 340 572 C 400 556 440 592 500 580 L 640 590 C 700 560 760 585 820 566 C 880 548 930 584 990 568 C 1050 552 1100 586 1160 570 C 1220 552 1270 588 1330 566 C 1390 548 1440 584 1500 568 C 1560 552 1640 580 1800 572 L 1800 640 L -200 640 Z" fill="#33284a" opacity=".85"/>
+      <rect x="-200" y="596" width="2000" height="8" fill="#2a1f3a"/>
+      <g class="train">
+        <g fill="#cfd3dc" stroke="#2a1f3a" stroke-width="1.5">
+          <rect x="0" y="574" width="150" height="22" rx="5"/>
+          <rect x="154" y="574" width="150" height="22" rx="5"/>
+          <rect x="308" y="574" width="150" height="22" rx="5"/>
+          <rect x="462" y="574" width="150" height="22" rx="5"/>
+        </g>
+        <path d="M0 586 q0 -12 14 -12 h4 v22 h-18z" fill="#9aa3b2"/>
+        <g fill="#ffe9a8">
+          <rect x="22" y="579" width="12" height="7" rx="1"/><rect x="42" y="579" width="12" height="7" rx="1"/><rect x="62" y="579" width="12" height="7" rx="1"/><rect x="82" y="579" width="12" height="7" rx="1"/><rect x="102" y="579" width="12" height="7" rx="1"/><rect x="122" y="579" width="12" height="7" rx="1"/>
+          <rect x="172" y="579" width="12" height="7" rx="1"/><rect x="192" y="579" width="12" height="7" rx="1"/><rect x="212" y="579" width="12" height="7" rx="1"/><rect x="232" y="579" width="12" height="7" rx="1"/><rect x="252" y="579" width="12" height="7" rx="1"/><rect x="272" y="579" width="12" height="7" rx="1"/>
+          <rect x="326" y="579" width="12" height="7" rx="1"/><rect x="346" y="579" width="12" height="7" rx="1"/><rect x="366" y="579" width="12" height="7" rx="1"/><rect x="386" y="579" width="12" height="7" rx="1"/><rect x="406" y="579" width="12" height="7" rx="1"/><rect x="426" y="579" width="12" height="7" rx="1"/>
+          <rect x="480" y="579" width="12" height="7" rx="1"/><rect x="500" y="579" width="12" height="7" rx="1"/><rect x="520" y="579" width="12" height="7" rx="1"/><rect x="540" y="579" width="12" height="7" rx="1"/><rect x="560" y="579" width="12" height="7" rx="1"/><rect x="580" y="579" width="12" height="7" rx="1"/>
+        </g>
+        <rect x="0" y="590" width="612" height="3" fill="#7a2f4a" opacity=".7"/>
+      </g>
+      <!-- nearer treeline -->
+      <path d="M-200 628 C -150 596 -110 618 -70 600 C -30 584 10 612 50 598 C 90 584 120 610 150 604 L 200 614 L 1380 616 C 1420 596 1460 612 1500 598 C 1540 582 1580 606 1620 596 C 1680 584 1740 610 1800 604 L 1800 650 L -200 650 Z" fill="#1f3a2e"/>
+    </g>
+
+    <!-- range field -->
+    <rect x="-200" y="612" width="2000" height="300" fill="url(#gField)"/>
+    <g fill="#ffffff" opacity=".06">
+      <rect x="-200" y="622" width="2000" height="8"/><rect x="-200" y="642" width="2000" height="12"/><rect x="-200" y="672" width="2000" height="18"/><rect x="-200" y="716" width="2000" height="26"/><rect x="-200" y="782" width="2000" height="36"/>
+    </g>
+    <!-- netting poles -->
+    <g stroke="#1b2a22" stroke-width="5" opacity=".55">
+      <line x1="40" y1="250" x2="40" y2="770"/><line x1="1560" y1="250" x2="1560" y2="770"/>
+    </g>
+    <!-- range targets, flags and distance markers -->
+    <g id="pxRange">
+      <ellipse cx="900" cy="640" rx="46" ry="6" fill="#89b866" opacity=".9"/>
+      <line x1="905" y1="640" x2="905" y2="606" stroke="#f6f0e1" stroke-width="2"/><path class="flutter" d="M905 606 l16 5 -16 5z" fill="#e85d4a"/>
+      <ellipse cx="1140" cy="628" rx="34" ry="5" fill="#89b866" opacity=".9"/>
+      <line x1="1144" y1="628" x2="1144" y2="602" stroke="#f6f0e1" stroke-width="2"/><path class="flutter" d="M1144 602 l13 4 -13 4z" fill="#f2e05a"/>
+      <ellipse cx="700" cy="668" rx="58" ry="8" fill="#89b866" opacity=".9"/>
+      <line x1="706" y1="668" x2="706" y2="626" stroke="#f6f0e1" stroke-width="2.4"/><path class="flutter" d="M706 626 l18 6 -18 6z" fill="#ffffff"/>
+      <g font-family="Archivo, sans-serif" font-weight="800" text-anchor="middle">
+        <g><rect x="1010" y="624" width="34" height="18" rx="3" fill="#f6f0e1"/><text x="1027" y="638" font-size="12" fill="#1d5c41">250</text></g>
+        <g><rect x="520" y="640" width="40" height="21" rx="3" fill="#f6f0e1"/><text x="540" y="656" font-size="14" fill="#1d5c41">200</text></g>
+        <g><rect x="790" y="690" width="48" height="25" rx="4" fill="#f6f0e1"/><text x="814" y="709" font-size="17" fill="#1d5c41">150</text></g>
+        <g><rect x="1480" y="700" width="54" height="28" rx="4" fill="#f6f0e1"/><text x="1507" y="721" font-size="19" fill="#1d5c41">100</text></g>
+      </g>
+    </g>
+
+    <!-- target green where the hero ball lands -->
+    <g id="targetGreen">
+      <ellipse cx="1330" cy="694" rx="118" ry="20" fill="#5da45a"/>
+      <ellipse cx="1330" cy="692" rx="100" ry="15" fill="#86c46a"/>
+      <ellipse cx="1364" cy="692" rx="7" ry="2.6" fill="#173322"/>
+      <line x1="1365" y1="692" x2="1365" y2="618" stroke="#f6f0e1" stroke-width="3"/>
+      <path class="flutter" d="M1366 619 l30 9 -30 10z" fill="#c9a24a"/>
+    </g>
+
+    <!-- hitting deck -->
+    <rect x="-200" y="764" width="2000" height="160" fill="url(#gDeck)"/>
+    <rect x="-200" y="762" width="2000" height="5" fill="#c9a24a" opacity=".7"/>
+    <!-- bay post with plaque -->
+    <g>
+      <rect x="96" y="380" width="22" height="388" fill="#0e2c20"/>
+      <rect x="70" y="420" width="74" height="40" rx="6" fill="#0f3b2a" stroke="#c9a24a" stroke-width="2"/>
+      <text x="107" y="446" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="16" fill="#e8c56a" letter-spacing="1">BAY 12</text>
+    </g>
+    <!-- mat -->
+    <path d="M170 758 L470 758 L500 800 L140 800 Z" fill="url(#gMat)"/>
+    <path d="M170 758 L470 758 L474 764 L166 764 Z" fill="#6bc286" opacity=".6"/>
+    <!-- ball-tracking screen -->
+    <g id="bayScreen">
+      <line x1="574" y1="700" x2="574" y2="766" stroke="#0a1f16" stroke-width="8"/>
+      <rect x="486" y="606" width="176" height="98" rx="8" fill="#0a1f16" stroke="#c9a24a" stroke-width="2"/>
+      <rect x="494" y="614" width="160" height="82" rx="4" fill="url(#gScreen)"/>
+      <g font-family="Archivo, sans-serif" fill="#f6f0e1">
+        <text x="502" y="632" font-size="9" fill="#e8c56a" letter-spacing="1.2" font-weight="700">BALL SPEED</text>
+        <text id="hudSpeed" x="646" y="633" font-size="11" text-anchor="end" font-weight="800">–</text>
+        <text x="502" y="652" font-size="9" fill="#e8c56a" letter-spacing="1.2" font-weight="700">LAUNCH</text>
+        <text id="hudLaunch" x="646" y="652" font-size="11" text-anchor="end" font-weight="800">–</text>
+        <text x="502" y="672" font-size="9" fill="#e8c56a" letter-spacing="1.2" font-weight="700">CARRY</text>
+        <text id="hudCarry" x="646" y="689" font-size="22" text-anchor="end" font-weight="900" fill="#ffb340">0</text>
+        <text x="502" y="688" font-size="9" opacity=".7">YDS</text>
+      </g>
+    </g>
+
+    <!-- tracer + ball -->
+    <path id="flightPath" d="M360 745 Q 820 -260 1290 690" fill="none" stroke="none"/>
+    <path id="tracerGlow" d="M360 745 Q 820 -260 1290 690" fill="none" stroke="#ffb340" stroke-width="16" stroke-linecap="round" opacity=".55" filter="url(#fGlow)"/>
+    <path id="tracerCore" d="M360 745 Q 820 -260 1290 690" fill="none" stroke="#fff1c9" stroke-width="4" stroke-linecap="round"/>
+    <circle id="impactFlash" cx="360" cy="745" r="0" fill="#fff4c9" opacity="0"/>
+    <ellipse id="ballShadow" cx="360" cy="758" rx="10" ry="3" fill="#000" opacity=".35"/>
+    <path d="M356 760 L364 760 L362 754 L358 754 Z" fill="#f6f0e1"/>
+
+    <!-- the golfer (original character) -->
+    <g id="golfer">
+      <!-- legs -->
+      <path d="M284 646 L262 752" stroke="#23364a" stroke-width="24" stroke-linecap="round"/>
+      <path id="backLeg" d="M316 646 L340 752" stroke="#23364a" stroke-width="24" stroke-linecap="round"/>
+      <ellipse cx="256" cy="758" rx="22" ry="9" fill="#fffaf0" stroke="#c9a24a" stroke-width="2"/>
+      <ellipse id="backShoe" cx="346" cy="758" rx="22" ry="9" fill="#fffaf0" stroke="#c9a24a" stroke-width="2"/>
+      <!-- torso -->
+      <g id="torso">
+        <path d="M268 566 Q300 552 332 566 L328 650 Q300 658 272 650 Z" fill="#f6f0e1" stroke="#d8cdb1" stroke-width="2"/>
+        <path d="M270 600 L330 600" stroke="#c9a24a" stroke-width="6"/>
+        <path d="M287 559 L300 578 L313 559" fill="#1d5c41"/>
+        <rect x="271" y="642" width="58" height="10" rx="3" fill="#14251c"/>
+        <rect x="294" y="642" width="12" height="10" rx="2" fill="#c9a24a"/>
+      </g>
+      <!-- arms + club (rotate about the shoulders) -->
+      <g id="arms">
+        <path d="M278 570 L306 652" stroke="#f2c39d" stroke-width="13" stroke-linecap="round"/>
+        <path d="M322 570 L312 652" stroke="#f2c39d" stroke-width="13" stroke-linecap="round"/>
+        <path d="M278 570 L284 590" stroke="#f6f0e1" stroke-width="18" stroke-linecap="round"/>
+        <path d="M322 570 L320 590" stroke="#f6f0e1" stroke-width="18" stroke-linecap="round"/>
+        <g id="club">
+          <line x1="309" y1="652" x2="340" y2="744" stroke="#c9ced4" stroke-width="4" stroke-linecap="round"/>
+          <line x1="309" y1="650" x2="315" y2="672" stroke="#14251c" stroke-width="7" stroke-linecap="round"/>
+          <path d="M334 740 Q346 736 358 742 Q360 752 348 753 L336 752 Q330 748 334 740 Z" fill="#3b4652" stroke="#14251c" stroke-width="1.5"/>
+        </g>
+        <circle cx="309" cy="652" r="10" fill="#fffdf6" stroke="#d8cdb1" stroke-width="2"/>
+      </g>
+      <!-- neck + head -->
+      <rect x="291" y="540" width="18" height="20" rx="6" fill="#e8b48b"/>
+      <g id="head">
+        <circle cx="262" cy="514" r="8" fill="#e8b48b"/><circle cx="338" cy="514" r="8" fill="#e8b48b"/>
+        <circle cx="300" cy="512" r="38" fill="#f2c39d"/>
+        <path d="M262 506 Q264 468 300 466 Q336 468 338 506 Z" fill="#1d5c41"/>
+        <path d="M262 504 Q300 494 338 504 Q300 520 262 504 Z" fill="#c9a24a"/>
+        <circle cx="300" cy="469" r="4" fill="#c9a24a"/>
+        <ellipse cx="287" cy="520" rx="4" ry="5" fill="#14251c"/><ellipse cx="313" cy="520" rx="4" ry="5" fill="#14251c"/>
+        <circle cx="288.5" cy="518" r="1.4" fill="#fff"/><circle cx="314.5" cy="518" r="1.4" fill="#fff"/>
+        <circle cx="278" cy="531" r="5" fill="#f19a8a" opacity=".55"/><circle cx="322" cy="531" r="5" fill="#f19a8a" opacity=".55"/>
+        <path d="M290 533 Q300 542 310 533" stroke="#8a3b2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- the ball (drawn above golfer) -->
+    <g id="heroBall"><circle cx="0" cy="0" r="9" fill="#fffef8" stroke="#bdb7a8" stroke-width="1"/><circle cx="-3" cy="-2" r="1.3" fill="#d7d1c1"/><circle cx="3" cy="-3" r="1.3" fill="#d7d1c1"/><circle cx="1" cy="3" r="1.3" fill="#d7d1c1"/></g>
+  </svg>
+
+  <div class="hero-copy">
+    <h1 class="hero-title" id="heroTitle" aria-label="Alley Pond Golf Center">
+      <span class="line">Alley Pond</span> <span class="line">Golf Center</span>
+    </h1>
+    <p class="tagline fade-late">Est. 1949 <span>·</span> Reimagined 2026</p>
+    <p class="hero-sub fade-late d2">Douglaston, Queens · Managed by Knox Golf Academy</p>
+    <div class="hero-ctas fade-late d3">
+      <a class="btn" href="#book" data-book="bay">Book a Bay</a>
+      <a class="btn btn--ghost" href="#swing">Take a swing</a>
+    </div>
+  </div>
+  <button class="replay" id="replay" type="button" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+    Replay swing
+  </button>
+  <a class="scroll-cue" href="#about">Scroll<i></i></a>
+</section>
+
+<main id="main">
+  <div class="roll-track" id="rollTrack" aria-hidden="true">
+    <div class="roll-line"></div>
+    <div class="roll-fill" id="rollFill"></div>
+    <div class="roll-ball" id="rollBall"><svg viewBox="0 0 20 20"><use href="#sym-ball"/></svg></div>
+  </div>
+
+  <!-- 0. INTERACTIVE 3D BAY -->
+  <section class="section section--deep" id="swing" data-stop>
+    <div class="deco deco--cloud" data-speed="-0.1" style="width:240px;height:96px;right:6%;top:24px"><svg><use href="#sym-cloud"/></svg></div>
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Bay 12 · Your turn</span>
+        <h2>Take a swing</h2>
+        <p class="lede">Hold the button to build power, then let it go. Every shot is traced and measured, just like in our ball-tracking bays. Drag the scene to walk around the golfer.</p>
+      </div>
+      <div class="bay3d reveal" id="bay3d" style="--d:1">
+        <div class="bay3d-stage">
+          <canvas id="bayCanvas" aria-label="Interactive 3D golfer on a driving range bay. Use the Swing button to hit a shot." role="img"></canvas>
+          <div class="bay3d-hint" id="bayHint">Drag to look around</div>
+          <div class="bay3d-fallback">
+            <p><b>3D view unavailable.</b> Your browser couldn't start the 3D scene, but you can still take a swing and see the shot data.</p>
+          </div>
+          <div class="bay3d-controls">
+            <div class="power" aria-hidden="true"><i id="powerFill"></i><span>Power</span></div>
+            <button class="btn swing-btn" id="swingBtn" type="button">Hold to swing</button>
+          </div>
+        </div>
+        <aside class="shot-panel" id="shotPanel" aria-live="polite">
+          <div class="shot-top">
+            <span class="shot-label">Shot data</span>
+            <span class="shot-num" id="shotNum">Ready</span>
+          </div>
+          <div class="shot-carry"><b id="mCarry">0</b><span>yd carry</span></div>
+          <dl class="shot-grid">
+            <div><dt>Ball speed</dt><dd id="mBall">–</dd></div>
+            <div><dt>Club speed</dt><dd id="mClub">–</dd></div>
+            <div><dt>Smash</dt><dd id="mSmash">–</dd></div>
+            <div><dt>Launch</dt><dd id="mLaunch">–</dd></div>
+            <div><dt>Spin</dt><dd id="mSpin">–</dd></div>
+            <div><dt>Apex</dt><dd id="mApex">–</dd></div>
+            <div><dt>Total</dt><dd id="mTotal">–</dd></div>
+            <div><dt>Curve</dt><dd id="mCurve">–</dd></div>
+          </dl>
+          <div class="shot-history">
+            <span class="shot-label">Last shots</span>
+            <ol id="shotHistory"><li class="empty">Your shots show up here</li></ol>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. ABOUT -->
+  <section class="section" id="about" data-stop>
+    <div class="deco deco--cloud" data-speed="-0.12" style="width:260px;height:104px;right:4%;top:40px"><svg><use href="#sym-cloud"/></svg></div>
+    <div class="deco deco--tree hide-sm" data-speed="0.1" style="width:180px;height:255px;right:-30px;bottom:-30px"><svg><use href="#sym-tree"/></svg></div>
+    <div class="wrap split">
+      <div>
+        <div class="head reveal">
+          <span class="eyebrow">About</span>
+          <h2>A Queens landmark, reimagined</h2>
+        </div>
+        <p class="lede reveal" style="--d:1">Since the 1950s, Alley Pond has been where Queens learns, practices and falls in love with golf. After a renovation of about $10 million, we reopened in July 2026 with everything you remember and a lot you've never seen.</p>
+        <p class="reveal" style="--d:2">Once voted one of America's top 100 golf ranges by the Golf Range Association of America, the center welcomes everyone: families out for a fun evening, beginners picking up a club for the first time, and experienced golfers grinding on their numbers.</p>
+        <div class="pill-row reveal" style="--d:3"><span class="pill">Families</span><span class="pill">Beginners</span><span class="pill">Experienced golfers</span><span class="pill">Date nights</span></div>
+      </div>
+      <div class="stats">
+        <div class="stat reveal" style="--d:1"><b>1949</b><span>Established in Douglaston</span></div>
+        <div class="stat reveal" style="--d:2"><b>~$10M</b><span>Top-to-bottom renovation</span></div>
+        <div class="stat reveal" style="--d:3"><b>July '26</b><span>Grand reopening</span></div>
+        <div class="stat reveal" style="--d:4"><b>Top 100</b><span>U.S. golf range, Golf Range Association of America</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. DRIVING RANGE -->
+  <section class="section section--sand" id="range" data-stop>
+    <div class="deco deco--flag hide-sm" data-speed="-0.18" style="width:50px;height:108px;right:7%;top:70px"><svg><use href="#sym-flag"/></svg></div>
+    <div class="deco deco--marker" data-speed="0.14" style="width:74px;height:98px;right:16%;top:24px"><svg viewBox="0 0 90 120"><use href="#sym-marker" width="90" height="120"/><text x="45" y="40" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="26" fill="#1d5c41">150</text></svg></div>
+    <div class="deco deco--tree" data-speed="0.08" style="width:150px;height:212px;left:-50px;bottom:-40px"><svg><use href="#sym-tree"/></svg></div>
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Driving Range</span>
+        <h2>Every shot, traced</h2>
+        <p class="lede">Modern hitting bays with advanced ball-tracking, digital displays and interactive games, plus a full range field and a natural-grass short-game area. Hover a card to hit one.</p>
+      </div>
+      <div class="grid range-grid">
+        <article class="card wide reveal" tabindex="0" style="--d:1">
+          <svg class="tracer-mini" viewBox="0 0 640 62" preserveAspectRatio="none" aria-hidden="true"><line class="gnd" x1="0" y1="58" x2="640" y2="58"/><path class="arc" pathLength="1" d="M8 56 Q320 -40 630 54"/><circle class="tee" cx="8" cy="57" r="3"/><circle class="dot" cx="630" cy="54" r="4"/></svg>
+          <span class="yards">CARRY 247</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 20c4-12 14-16 18-14"/><circle cx="21" cy="6" r="1.6" fill="currentColor"/></svg></div>
+          <h3>Ball-tracking hitting bays</h3>
+          <p>See speed, launch, carry and the flight of every ball the moment it leaves the club.</p>
+        </article>
+        <article class="card reveal" tabindex="0" style="--d:2">
+          <svg class="tracer-mini" viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true"><line class="gnd" x1="0" y1="58" x2="300" y2="58"/><path class="arc" pathLength="1" d="M8 56 Q120 -20 240 54"/><circle class="tee" cx="8" cy="57" r="3"/><circle class="dot" cx="240" cy="54" r="4"/></svg>
+          <span class="yards">CARRY 182</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <h3>Digital displays</h3>
+          <p>Bay screens show your data shot by shot, so practice actually adds up.</p>
+        </article>
+        <article class="card reveal" tabindex="0" style="--d:3">
+          <svg class="tracer-mini" viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true"><line class="gnd" x1="0" y1="58" x2="300" y2="58"/><path class="arc" pathLength="1" d="M8 56 Q140 -50 280 50"/><circle class="tee" cx="8" cy="57" r="3"/><circle class="dot" cx="280" cy="50" r="4"/></svg>
+          <span class="yards">BULLSEYE</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></div>
+          <h3>Interactive gameplay</h3>
+          <p>Target games and challenges that turn a bucket of balls into a night out.</p>
+        </article>
+        <article class="card reveal" tabindex="0" style="--d:4">
+          <svg class="tracer-mini" viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true"><line class="gnd" x1="0" y1="58" x2="300" y2="58"/><path class="arc" pathLength="1" d="M8 56 Q160 -60 296 56"/><circle class="tee" cx="8" cy="57" r="3"/><circle class="dot" cx="296" cy="56" r="4"/></svg>
+          <span class="yards">CARRY 268</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 21V4"/><path d="M6 4l10 4-10 4"/><path d="M2 21h20"/></svg></div>
+          <h3>Full range field</h3>
+          <p>Wide-open target field with flags and distance markers to dial in every club.</p>
+        </article>
+        <article class="card reveal" tabindex="0" style="--d:5">
+          <svg class="tracer-mini" viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true"><line class="gnd" x1="0" y1="58" x2="300" y2="58"/><path class="arc" pathLength="1" d="M8 56 Q70 0 130 54"/><circle class="tee" cx="8" cy="57" r="3"/><circle class="dot" cx="130" cy="54" r="4"/></svg>
+          <span class="yards">CARRY 42</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="17" rx="9" ry="3.5"/><path d="M13 17V4l6 2.5-6 2.5"/></svg></div>
+          <h3>Natural-grass short game</h3>
+          <p>Chip and pitch onto real target greens where the scoring shots happen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SIMULATORS -->
+  <section class="section section--deep" id="simulators" data-stop>
+    <div class="deco deco--cloud" data-speed="-0.1" style="width:280px;height:112px;left:6%;top:30px"><svg><use href="#sym-cloud"/></svg></div>
+    <div class="wrap split">
+      <div>
+        <div class="head reveal">
+          <span class="eyebrow">Golf Simulators</span>
+          <h2>Play famous courses, rain or shine</h2>
+        </div>
+        <p class="lede reveal" style="--d:1">Private simulator rooms where your group can tee it up on world-famous virtual courses, all year round.</p>
+        <ul class="sim-list reveal" style="--d:2">
+          <li>Private rooms for friends, families and teams</li>
+          <li>Full rounds on renowned virtual courses</li>
+          <li>Practice modes with shot data on screen</li>
+        </ul>
+        <p class="reveal" style="--d:3;margin-top:24px"><a class="btn" href="#book" data-book="sim">Reserve a simulator</a></p>
+      </div>
+      <div class="sim reveal" id="sim" style="--d:2">
+        <div class="sim-bezel">
+          <div class="sim-display">
+            <div class="sim-content">
+              <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <defs><linearGradient id="simSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fb7e8"/><stop offset="1" stop-color="#cfe9f6"/></linearGradient></defs>
+                <rect width="320" height="180" fill="url(#simSky)"/>
+                <path d="M0 96 C60 80 110 92 160 84 C220 74 270 88 320 80 V180 H0Z" fill="#5d8f5a"/>
+                <path d="M0 100 C70 92 140 98 200 92 C250 88 290 94 320 92 V180 H0Z" fill="#3e7a45"/>
+                <path d="M120 180 C140 140 170 112 210 100 L240 100 C226 116 200 150 196 180Z" fill="#7cc06a"/>
+                <path d="M232 98 C200 70 260 54 300 70" fill="none" stroke="#2f5e33" stroke-width="0"/>
+                <ellipse cx="226" cy="100" rx="24" ry="5" fill="#9bdc7c"/>
+                <path d="M196 120 q10 -6 24 -2 q-6 10 -24 2z" fill="#e8d9a0"/>
+                <g fill="#2a5a30"><circle cx="40" cy="86" r="14"/><circle cx="58" cy="80" r="16"/><circle cx="290" cy="80" r="14"/><circle cx="272" cy="86" r="11"/></g>
+                <line x1="230" y1="100" x2="230" y2="80" stroke="#fff" stroke-width="1.5"/><path d="M230 80 l10 3 -10 3z" fill="#e85d4a"/>
+                <path class="shot" d="M160 176 Q190 30 228 98"/>
+              </svg>
+              <div class="sim-hud"><span>Hole 7</span><span>Par 3</span><span>168 yds</span></div>
+              <div class="sim-scan"></div>
+            </div>
+          </div>
+          <span class="sim-led"></span>
+        </div>
+        <div class="sim-stand"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. MINI GOLF -->
+  <section class="section" id="mini-golf" data-stop>
+    <div class="deco deco--tree" data-speed="0.12" style="width:160px;height:226px;right:-40px;top:20px"><svg><use href="#sym-tree"/></svg></div>
+    <div class="deco deco--flag hide-sm" data-speed="-0.15" style="width:44px;height:96px;left:5%;bottom:60px"><svg><use href="#sym-flag"/></svg></div>
+    <div class="wrap split">
+      <div>
+        <div class="head reveal">
+          <span class="eyebrow">Mini Golf</span>
+          <h2>A brand-new course is on the way</h2>
+        </div>
+        <p class="lede reveal" style="--d:1">A brand-new mini golf course is coming soon, built for family outings, birthday crews and date nights.</p>
+        <p class="reveal" style="--d:2">Want to know the moment it opens? Give us a call or follow along on social.</p>
+      </div>
+      <div class="mini-wrap mini reveal" id="mini" style="--d:2">
+        <svg class="badge" viewBox="0 0 132 132" role="img" aria-label="Coming soon">
+          <circle cx="66" cy="66" r="62" fill="#c9a24a"/>
+          <circle cx="66" cy="66" r="54" fill="none" stroke="#0f3b2a" stroke-width="1.5" stroke-dasharray="3 4"/>
+          <g class="spin">
+            <defs><path id="badgeCircle" d="M66 66 m-45 0 a45 45 0 1 1 90 0 a45 45 0 1 1 -90 0"/></defs>
+            <text font-family="Archivo, sans-serif" font-weight="800" font-size="10.5" letter-spacing="2.4" fill="#0f3b2a"><textPath href="#badgeCircle" textLength="276" lengthAdjust="spacing">COMING SOON · COMING SOON · </textPath></text>
+          </g>
+          <text x="66" y="63" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="13.5" fill="#0f3b2a">COMING</text>
+          <text x="66" y="79" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="13.5" fill="#0f3b2a">SOON</text>
         </svg>
-        <span class="logo__word">Alley<b>Golf</b></span>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
-          <span class="nav__toggle-label">Menu</span>
-          <span class="nav__toggle-bars" aria-hidden="true"><span></span><span></span></span>
-        </button>
-        <ul class="nav__menu" id="nav-menu" data-nav-menu>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#warmup">Warm-up</a></li>
-          <li><a href="#bar">Food &amp; drink</a></li>
-          <li><a href="#groups">Groups</a></li>
-          <li class="nav__cta"><a class="btn btn--neon" href="#book">Book a tee time</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <!-- ================================= HERO ================================= -->
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <svg class="hero__scene" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#05060a"/><stop offset="1" stop-color="#151827"/>
-          </linearGradient>
-          <linearGradient id="wallL" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#3a1f1a"/><stop offset=".7" stop-color="#1c1112"/><stop offset="1" stop-color="#0d0a0d"/>
-          </linearGradient>
-          <linearGradient id="wallR" x1="1" y1="0" x2="0" y2="0">
-            <stop offset="0" stop-color="#2a1a1c"/><stop offset=".7" stop-color="#160f13"/><stop offset="1" stop-color="#0b090d"/>
-          </linearGradient>
-          <linearGradient id="floor" x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0" stop-color="#14161d"/><stop offset="1" stop-color="#07080b"/>
-          </linearGradient>
-          <linearGradient id="turf" x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0" stop-color="#2f7a3a"/><stop offset=".6" stop-color="#1d4f28"/><stop offset="1" stop-color="#0f2a16"/>
-          </linearGradient>
-          <radialGradient id="door" cx=".5" cy="1" r=".9">
-            <stop offset="0" stop-color="#ffbf6b" stop-opacity=".95"/><stop offset=".5" stop-color="#ff7a3d" stop-opacity=".35"/><stop offset="1" stop-color="#ff7a3d" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="pool" cx=".5" cy=".5" r=".5">
-            <stop offset="0" stop-color="#ff4f7b" stop-opacity=".5"/><stop offset="1" stop-color="#ff4f7b" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="bulb" r=".5">
-            <stop offset="0" stop-color="#fff3d6"/><stop offset=".35" stop-color="#ffd28a" stop-opacity=".8"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
-          </radialGradient>
-          <pattern id="bricks" width="64" height="28" patternUnits="userSpaceOnUse">
-            <path d="M0 0H64M0 14H64M0 0V14M32 14V28" stroke="#000" stroke-opacity=".35" stroke-width="2" fill="none"/>
-          </pattern>
-          <filter id="neon" x="-20%" y="-60%" width="140%" height="220%">
-            <feGaussianBlur stdDeviation="6" result="b1"/><feGaussianBlur in="SourceGraphic" stdDeviation="18" result="b2"/>
-            <feMerge><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
-        </defs>
-
-        <rect width="1600" height="1000" fill="url(#sky)"/>
-        <!-- back wall + doorway -->
-        <rect x="600" y="300" width="400" height="330" fill="#0e0c10"/>
-        <rect x="600" y="300" width="400" height="330" fill="url(#bricks)" opacity=".5"/>
-        <rect x="745" y="470" width="110" height="160" fill="#2a1408"/>
-        <rect x="745" y="470" width="110" height="160" fill="url(#door)"/>
-        <ellipse cx="800" cy="640" rx="260" ry="40" fill="url(#door)" opacity=".5"/>
-
-        <!-- walls -->
-        <path d="M0 0 L600 300 L600 630 L0 1000 Z" fill="url(#wallL)"/>
-        <path d="M0 0 L600 300 L600 630 L0 1000 Z" fill="url(#bricks)" transform="" opacity=".55"/>
-        <path d="M1600 0 L1000 300 L1000 630 L1600 1000 Z" fill="url(#wallR)"/>
-        <path d="M1600 0 L1000 300 L1000 630 L1600 1000 Z" fill="url(#bricks)" opacity=".45"/>
-        <!-- fire escape on left wall -->
-        <g stroke="#000" stroke-opacity=".7" stroke-width="4" fill="none">
-          <path d="M120 120 L420 270 M120 300 L420 395 M120 120 L120 300 M420 270 L420 395"/>
-          <path d="M150 135 L150 310 M200 160 L200 326 M250 185 L250 342 M300 210 L300 358 M350 235 L350 374 M390 255 L390 386" stroke-width="2"/>
-        </g>
-        <!-- floor -->
-        <path d="M0 1000 L600 630 L1000 630 L1600 1000 Z" fill="url(#floor)"/>
-        <!-- putting green strip -->
-        <path d="M430 1000 L730 630 L870 630 L1170 1000 Z" fill="url(#turf)"/>
-        <path d="M430 1000 L730 630 M1170 1000 L870 630" stroke="#c8ff4d" stroke-opacity=".35" stroke-width="2"/>
-        <!-- wet-floor neon reflections -->
-        <ellipse cx="300" cy="820" rx="260" ry="60" fill="url(#pool)" filter="url(#soft)"/>
-        <ellipse cx="800" cy="700" rx="140" ry="22" fill="#c8ff4d" opacity=".12" filter="url(#soft)"/>
-
-        <!-- cup + flag -->
-        <ellipse cx="800" cy="668" rx="16" ry="4.5" fill="#000"/>
-        <line x1="800" y1="668" x2="800" y2="540" stroke="#e9e6dc" stroke-width="2.5"/>
-        <path d="M800 542 L846 556 L800 572 Z" fill="#c8ff4d" class="flag"/>
-
-        <!-- rolling ball with glow trail -->
-        <g class="ball">
-          <circle r="11" fill="#fff" opacity=".18" filter="url(#soft)">
-            <animateMotion dur="5.5s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.62;1" calcMode="spline" keySplines=".2 .7 .3 1;0 0 1 1" path="M820 960 C 760 860, 860 760, 800 668"/>
-          </circle>
-          <circle r="9" fill="#fbfaf5">
-            <animateMotion dur="5.5s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.62;1" calcMode="spline" keySplines=".2 .7 .3 1;0 0 1 1" path="M820 960 C 760 860, 860 760, 800 668"/>
-            <animate attributeName="r" dur="5.5s" repeatCount="indefinite" values="13;4;0;0" keyTimes="0;.6;.63;1"/>
-          </circle>
-        </g>
-
-        <!-- string lights -->
-        <g class="lights">
-          <path d="M0 150 Q 400 330 820 250 T 1600 170" stroke="#000" stroke-width="2" fill="none" opacity=".8"/>
-          <path d="M0 330 Q 420 470 800 420 T 1600 360" stroke="#000" stroke-width="2" fill="none" opacity=".8"/>
-        </g>
-        <g class="bulbs" data-bulbs></g>
-
-        <!-- neon sign on right wall -->
-        <g class="neon" transform="matrix(1 -.5 0 1 1090 520)">
-          <rect x="-10" y="-70" width="420" height="160" rx="10" fill="#0a0709" opacity=".6"/>
-          <text x="200" y="10" text-anchor="middle" class="neon__text neon__text--pink" filter="url(#neon)">ALLEY</text>
-          <text x="200" y="74" text-anchor="middle" class="neon__text neon__text--lime" filter="url(#neon)">GOLF</text>
-        </g>
-        <!-- neon arrow on right wall, pointing into the alley -->
-        <g class="neon neon--arrow" transform="matrix(1 -.5 0 1 1180 700)" filter="url(#neon)">
-          <path d="M150 0 H0 M40 -30 L0 0 L40 30" stroke="#ff4f7b" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </g>
-      </svg>
-      <div class="hero__scrim" aria-hidden="true"></div>
-
-      <div class="hero__content container">
-        <p class="kicker reveal">Crazy golf · Cocktails · Late</p>
-        <h1 class="hero__title" id="hero-title">
-          <span class="line"><span>Eighteen holes.</span></span>
-          <span class="line"><span>One alley.</span></span>
-          <span class="line line--neon"><span>No dress code.</span></span>
-        </h1>
-        <div class="hero__row reveal" style="--d:.5s">
-          <p class="hero__lede">Two neon-lit nine-hole courses tucked down a back street, with a bar at the end of every round.</p>
-          <div class="hero__actions">
-            <a class="btn btn--neon btn--lg" href="#book">Book a tee time <span aria-hidden="true">→</span></a>
-            <a class="btn btn--line" href="#courses">See the courses</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================= TICKER ================================= -->
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker__track">
-        <span>Hole in one</span><i>✦</i><span>Mind the bin</span><i>✦</i><span>Last orders at the 18th</span><i>✦</i><span>Putters provided</span><i>✦</i><span>Birdies welcome</span><i>✦</i>
-        <span>Hole in one</span><i>✦</i><span>Mind the bin</span><i>✦</i><span>Last orders at the 18th</span><i>✦</i><span>Putters provided</span><i>✦</i><span>Birdies welcome</span><i>✦</i>
+        <svg class="putt" viewBox="0 0 400 200" aria-hidden="true">
+          <ellipse cx="210" cy="152" rx="190" ry="40" fill="#5fb36a"/>
+          <ellipse cx="210" cy="148" rx="176" ry="34" fill="#79c97a"/>
+          <path d="M40 148 q170 -24 340 0" stroke="#fff" stroke-opacity=".12" stroke-width="10" fill="none"/>
+          <ellipse cx="320" cy="146" rx="12" ry="4.5" fill="#123222"/>
+          <g class="pflag"><line x1="322" y1="146" x2="322" y2="62" stroke="#f6f0e1" stroke-width="3"/><path d="M323 63 l34 11 -34 11z" fill="#c9a24a"/></g>
+          <text class="plink" x="322" y="120" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="16" fill="#fff6d6">PLINK!</text>
+          <g class="pball"><circle cx="122" cy="140" r="7" fill="#fffef8" stroke="#c7c2b4"/></g>
+          <g class="putter"><line x1="104" y1="22" x2="104" y2="138" stroke="#d0d5da" stroke-width="4" stroke-linecap="round"/><line x1="104" y1="22" x2="104" y2="48" stroke="#14251c" stroke-width="7" stroke-linecap="round"/><rect x="92" y="134" width="22" height="10" rx="3" fill="#3b4652"/></g>
+        </svg>
       </div>
     </div>
+  </section>
 
-    <!-- ================================= COURSES ================================= -->
-    <section class="courses container" id="courses" aria-labelledby="courses-title">
-      <header class="section-head">
-        <p class="kicker reveal">The courses</p>
-        <h2 class="section-title reveal" id="courses-title">Two nines,<br><span class="hl">zero fairways.</span></h2>
-      </header>
-
-      <div class="course-tabs" role="tablist" aria-label="Choose a course" data-course-tabs></div>
-      <div class="course" data-course-panel role="tabpanel" tabindex="0">
-        <div class="course__intro">
-          <h3 class="course__name" data-course-name></h3>
-          <p class="course__desc" data-course-desc></p>
-          <dl class="course__stats">
-            <div><dt>Holes</dt><dd data-course-holes></dd></div>
-            <div><dt>Par</dt><dd data-course-par></dd></div>
-            <div><dt>Round</dt><dd data-course-time></dd></div>
-          </dl>
-        </div>
-        <ol class="holes" data-holes></ol>
+  <!-- 5. LESSONS -->
+  <section class="section section--sand" id="lessons" data-stop>
+    <div class="deco deco--marker hide-sm" data-speed="-0.14" style="width:70px;height:94px;right:6%;top:40px"><svg viewBox="0 0 90 120"><use href="#sym-marker" width="90" height="120"/><text x="45" y="40" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="26" fill="#1d5c41">100</text></svg></div>
+    <div class="deco deco--cloud" data-speed="0.1" style="width:220px;height:88px;left:-40px;bottom:30px"><svg><use href="#sym-cloud"/></svg></div>
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Lessons &amp; Programs</span>
+        <h2>Coached by Knox Golf Academy</h2>
+        <p class="lede">Whether it's your first swing or your hundredth round, Knox Golf Academy coaches meet you where you are.</p>
       </div>
-    </section>
-
-    <!-- ================================= WARM-UP GAME ================================= -->
-    <section class="warmup" id="warmup" aria-labelledby="warmup-title">
-      <div class="container warmup__grid">
-        <div class="warmup__copy">
-          <p class="kicker reveal">Warm-up green</p>
-          <h2 class="section-title reveal" id="warmup-title">Practise<br><span class="hl">your putt.</span></h2>
-          <p class="reveal">Drag back from the ball, aim and let go. On a keyboard, use the arrow keys to aim and set power, then press Space.</p>
-          <dl class="scorecard reveal">
-            <div><dt>Hole</dt><dd data-game-hole>1 / 3</dd></div>
-            <div><dt>Strokes</dt><dd data-game-strokes>0</dd></div>
-            <div><dt>Par</dt><dd data-game-par>2</dd></div>
-          </dl>
-          <div class="warmup__buttons">
-            <button class="btn btn--line" type="button" data-game-reset>Restart hole</button>
-          </div>
-        </div>
-        <div class="green reveal">
-          <canvas class="green__canvas" width="900" height="560" tabindex="0" role="img"
-                  aria-label="Mini putting game. Use arrow keys to aim and set power, Space to putt." data-game></canvas>
-          <p class="green__msg" role="status" aria-live="polite" data-game-msg></p>
-        </div>
+      <div class="grid lesson-grid">
+        <article class="card reveal" style="--d:1"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="7" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div><h3>Private lessons</h3><p>One-on-one time with a pro, built around your swing and goals.</p></article>
+        <article class="card reveal" style="--d:2"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c.6-3 3-5 6-5s5.4 2 6 5M14 15c3 0 5.4 2 6 5"/></svg></div><h3>Clinics</h3><p>Focused group sessions on driving, irons, short game and putting.</p></article>
+        <article class="card reveal" style="--d:3"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l9-15 9 15z"/><path d="M12 20v-5"/></svg></div><h3>Camps for all ages</h3><p>Multi-day camps that build fundamentals and confidence.</p></article>
+        <article class="card reveal" style="--d:4"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div><h3>Youth programs</h3><p>Fun, structured programs that grow the next generation of Queens golfers.</p></article>
       </div>
-    </section>
+      <div class="knox reveal" style="--d:5">
+        <div><b>Knox Golf Academy</b><p>Managing Alley Pond Golf Center and running every lesson and program on site.</p></div>
+        <a class="btn" href="#book" data-book="lesson">Book a Lesson</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- ================================= BAR ================================= -->
-    <section class="bar container" id="bar" aria-labelledby="bar-title">
-      <header class="section-head section-head--split">
+  <!-- 6. RESTAURANT -->
+  <section class="section section--dark" id="dining" data-stop>
+    <div class="deco deco--tree" data-speed="0.1" style="width:170px;height:240px;right:-40px;bottom:-20px"><svg><use href="#sym-tree"/></svg></div>
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Alley Pond Restaurant &amp; Bar</span>
+        <h2>American comfort meets Sichuan fire</h2>
+        <p class="lede">A menu that brings American favorites and traditional Sichuan cooking to the same table, making it one of the few places in Douglaston to find authentic Sichuan dishes.</p>
+      </div>
+      <div class="menu-card reveal" style="--d:1">
         <div>
-          <p class="kicker reveal">Food &amp; drink</p>
-          <h2 class="section-title reveal" id="bar-title">The 19th hole<br><span class="hl">is a bar.</span></h2>
+          <span class="kicker">From the clubhouse</span>
+          <h3>American</h3>
+          <ul>
+            <li>Clubhouse classics after a range session</li>
+            <li>Shareable plates for the bay or the bar</li>
+            <li>Family-friendly favorites for all ages</li>
+          </ul>
         </div>
-        <p class="section-intro reveal">Cocktails named after bad shots, cold beer on tap and street food you can eat with one hand while holding a putter with the other.</p>
-      </header>
-      <div class="menu">
-        <article class="menu-card reveal">
-          <p class="menu-card__tag">Cocktails</p>
+        <div class="divider" aria-hidden="true"><span>&amp;</span></div>
+        <div class="sichuan">
+          <span class="kicker">From the wok</span>
+          <h3>Sichuan<span class="chili" aria-label="spicy"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 4c1 0 2 .5 2.5 1.5C20 7 21 11 18 15c-3 4-9 6-14 5 4-2 7-5 8-9 .4-1.8.8-3.6 1.6-5.2C13.3 5.2 13.4 4 14 4z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 4c1 0 2 .5 2.5 1.5C20 7 21 11 18 15c-3 4-9 6-14 5 4-2 7-5 8-9 .4-1.8.8-3.6 1.6-5.2C13.3 5.2 13.4 4 14 4z"/></svg></span></h3>
           <ul>
-            <li><span>The Mulligan</span><small>Rum, lime, ginger, a second chance</small></li>
-            <li><span>Water Hazard</span><small>Gin, blue curaçao, tonic</small></li>
-            <li><span>Hole in Lime</span><small>Tequila, lime, agave, salt</small></li>
+            <li>Traditional Sichuan dishes, rarely found nearby</li>
+            <li>Bold chili and numbing peppercorn heat</li>
+            <li>Plates made for sharing with the group</li>
           </ul>
-        </article>
-        <article class="menu-card menu-card--pink reveal" style="--d:.08s">
-          <p class="menu-card__tag">Street food</p>
-          <ul>
-            <li><span>Loaded fries</span><small>Cheese sauce, pickled chilli</small></li>
-            <li><span>Smash burger</span><small>Double patty, house sauce</small></li>
-            <li><span>Bao trio</span><small>Pork belly, chicken, mushroom</small></li>
-          </ul>
-        </article>
-        <article class="menu-card menu-card--warm reveal" style="--d:.16s">
-          <p class="menu-card__tag">Zero proof</p>
-          <ul>
-            <li><span>Fore-ever Young</span><small>Seedlip, elderflower, soda</small></li>
-            <li><span>Par Tea</span><small>Iced peach tea, mint</small></li>
-            <li><span>Draft sodas</span><small>Cola, lemonade, root beer</small></li>
-          </ul>
-        </article>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ================================= GROUPS ================================= -->
-    <section class="groups" id="groups" aria-labelledby="groups-title">
-      <div class="container groups__grid">
-        <div>
-          <p class="kicker reveal">Groups &amp; events</p>
-          <h2 class="section-title reveal" id="groups-title">Birthdays, leaving dos,<br><span class="hl">team “offsites”.</span></h2>
+  <!-- 7. PRO SHOP -->
+  <section class="section" id="pro-shop" data-stop>
+    <div class="deco deco--flag" data-speed="-0.16" style="width:44px;height:96px;right:8%;top:40px"><svg><use href="#sym-flag"/></svg></div>
+    <div class="wrap shop">
+      <div class="shop-tag reveal"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 22h36l-3 32H17z"/><path d="M24 22v-4a8 8 0 0 1 16 0v4"/><circle cx="32" cy="38" r="6"/></svg></div>
+      <div>
+        <div class="head reveal" style="margin-bottom:16px">
+          <span class="eyebrow">Pro Shop</span>
+          <h2>Gear up, look sharp</h2>
         </div>
-        <ul class="perks">
-          <li class="reveal"><b>Group bookings</b><span>Tee times staggered so bigger parties play together without queueing.</span></li>
-          <li class="reveal" style="--d:.06s"><b>Food &amp; drink packages</b><span>Pre-order platters and drinks tokens so the round never stops.</span></li>
-          <li class="reveal" style="--d:.12s"><b>Private hire</b><span>Take over a whole course, or the whole alley, for the night.</span></li>
-        </ul>
+        <p class="lede reveal" style="--d:1">Golf retail and fashion under one roof, from the essentials you forgot at home to the look you'll wear on the first tee.</p>
+        <div class="shop-cats reveal" style="--d:2"><span class="pill">Clubs &amp; equipment</span><span class="pill">Balls &amp; accessories</span><span class="pill">Golf fashion</span><span class="pill">Gifts</span></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ================================= BOOKING ================================= -->
-    <section class="book" id="book" aria-labelledby="book-title">
-      <div class="container book__grid">
-        <div class="book__intro">
-          <p class="kicker reveal">Book</p>
-          <h2 class="section-title reveal" id="book-title">Grab a<br><span class="hl">tee time.</span></h2>
-          <p class="reveal">Pick a course, a day and a time. We’ll confirm by email.</p>
+  <!-- 8. EVENTS -->
+  <section class="section section--sand" id="events" data-stop>
+    <div class="deco deco--cloud" data-speed="-0.12" style="width:240px;height:96px;right:5%;top:30px"><svg><use href="#sym-cloud"/></svg></div>
+    <div class="deco deco--tree hide-sm" data-speed="0.1" style="width:140px;height:198px;left:-40px;bottom:-20px"><svg><use href="#sym-tree"/></svg></div>
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Parties &amp; Events</span>
+        <h2>Celebrate on the range</h2>
+        <p class="lede">Hitting bays, simulators, food and drinks: everything a great party needs, for every age.</p>
+      </div>
+      <div class="grid event-grid">
+        <article class="card reveal" style="--d:1"><span class="num">01</span><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M3 14h18M8 10V7M12 10V6M16 10V7"/></svg></div><h3>Birthdays</h3><p>From kids' parties to milestone birthdays with friends.</p></article>
+        <article class="card reveal" style="--d:2"><span class="num">02</span><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4M15 15c3 0 5 1.8 6 5"/></svg></div><h3>Parties for all ages</h3><p>Family reunions, team celebrations and get-togethers.</p></article>
+        <article class="card reveal" style="--d:3"><span class="num">03</span><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/></svg></div><h3>Corporate outings</h3><p>Team building, client entertainment and company events.</p></article>
+      </div>
+      <p class="reveal" style="--d:4;margin-top:28px"><a class="btn btn--green" href="tel:+17182259187">Plan an event · (718) 225-9187</a></p>
+    </div>
+  </section>
 
-          <aside class="ticket reveal" aria-label="Booking summary">
-            <div class="ticket__top">
-              <span class="ticket__brand">Alley Golf</span>
-              <span class="ticket__no">Admit <b data-sum-players>2</b></span>
-            </div>
-            <dl class="ticket__rows">
-              <div><dt>Course</dt><dd data-sum-course>—</dd></div>
-              <div><dt>Date</dt><dd data-sum-date>—</dd></div>
-              <div><dt>Time</dt><dd data-sum-time>—</dd></div>
-              <div class="ticket__total"><dt>Total</dt><dd data-sum-total>—</dd></div>
-            </dl>
-            <p class="ticket__fine">Pay on arrival. Prices are per player, per round.</p>
-          </aside>
-
-          <ul class="visit" data-visit hidden></ul>
+  <!-- 9 + 10. HOURS & PRICING -->
+  <section class="section section--deep" id="visit" data-stop>
+    <div class="deco deco--cloud" data-speed="-0.1" style="width:260px;height:104px;left:4%;top:20px"><svg><use href="#sym-cloud"/></svg></div>
+    <div class="wrap grid info-grid">
+      <div id="hours">
+        <div class="head reveal" style="margin-bottom:22px">
+          <span class="eyebrow">Hours</span>
+          <h2>When to visit</h2>
         </div>
+        <!-- HOURS: replace the notice below with the current hours, e.g.
+        <table class="hours-table"><tbody>
+          <tr><td>Monday – Friday</td><td>[open] – [close]</td></tr>
+          <tr><td>Saturday – Sunday</td><td>[open] – [close]</td></tr>
+        </tbody></table>
+        -->
+        <div class="notice reveal" style="--d:1">Hours are being updated for the 2026 reopening. Call <a href="tel:+17182259187">(718) 225-9187</a> for today's hours.</div>
+      </div>
+      <div id="pricing">
+        <div class="head reveal" style="margin-bottom:22px">
+          <span class="eyebrow">Pricing</span>
+          <h2>Bays, sims &amp; lessons</h2>
+        </div>
+        <!-- PRICING: replace each "Call for rates" with the current price, e.g. <div class="amt">$XX <small>/ hour</small></div> -->
+        <div class="grid price-grid">
+          <article class="card price-card reveal" style="--d:1"><h3>Hitting bays</h3><div class="amt">Call for rates</div><p>Ball-tracking bays for solo practice or groups.</p></article>
+          <article class="card price-card reveal" style="--d:2"><h3>Simulators</h3><div class="amt">Call for rates</div><p>Private rooms, priced per session.</p></article>
+          <article class="card price-card reveal" style="--d:3"><h3>Lessons</h3><div class="amt">Call for rates</div><p>Private lessons, clinics, camps and youth programs.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <form class="form" id="book-form" novalidate data-book-form>
-          <fieldset class="field field--group">
-            <legend>Course</legend>
-            <div class="seg" data-course-options></div>
-            <p class="field__error" id="b-course-err"></p>
+  <!-- BOOK A SLOT -->
+  <section class="section section--sand" id="book" data-stop>
+    <div class="deco deco--flag hide-sm" data-speed="-0.15" style="width:44px;height:96px;right:6%;top:40px"><svg><use href="#sym-flag"/></svg></div>
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow">Book a Slot</span>
+        <h2>Pick your tee time</h2>
+        <p class="lede">Choose what you'd like to book, the day, the time and how many are playing. Sink the putt and we'll take you to the last step.</p>
+      </div>
+      <form class="booker reveal" id="booker" style="--d:1" novalidate>
+        <div class="booker-steps">
+          <fieldset>
+            <legend><span>1</span> What are you booking?</legend>
+            <div class="svc-row" id="svcRow"></div>
           </fieldset>
-
-          <div class="form__row form__row--2">
-            <div class="field">
-              <label for="b-date">Date</label>
-              <input id="b-date" name="date" type="date" required aria-describedby="b-date-err">
-              <p class="field__error" id="b-date-err"></p>
-            </div>
-            <div class="field">
-              <label for="b-time">Time</label>
-              <select id="b-time" name="time" required aria-describedby="b-time-err">
-                <option value="">Choose a date first</option>
-              </select>
-              <p class="field__error" id="b-time-err"></p>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="b-players">Players</label>
+          <fieldset>
+            <legend><span>2</span> Pick a day</legend>
+            <div class="chip-scroll" id="dayRow"></div>
+          </fieldset>
+          <fieldset>
+            <legend><span>3</span> Pick a time</legend>
+            <div class="time-grid" id="timeRow"></div>
+            <p class="fine">Times shown are a guide. Our staff confirm availability for every booking.</p>
+          </fieldset>
+          <fieldset>
+            <legend><span>4</span> Players</legend>
             <div class="stepper">
-              <button type="button" class="stepper__btn" data-step="-1" aria-label="One fewer player">−</button>
-              <input id="b-players" name="players" type="number" inputmode="numeric" min="1" max="8" value="2" required aria-describedby="b-players-err b-players-hint">
-              <button type="button" class="stepper__btn" data-step="1" aria-label="One more player">+</button>
+              <button type="button" id="pMinus" aria-label="Fewer players">−</button>
+              <output id="pCount" aria-live="polite">2</output>
+              <button type="button" id="pPlus" aria-label="More players">+</button>
             </div>
-            <p class="field__hint" id="b-players-hint">Up to 8 per booking. Bigger group? Mention it below.</p>
-            <p class="field__error" id="b-players-err"></p>
-          </div>
-
-          <div class="form__row form__row--2">
-            <div class="field">
-              <label for="b-name">Name</label>
-              <input id="b-name" name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby="b-name-err">
-              <p class="field__error" id="b-name-err"></p>
-            </div>
-            <div class="field">
-              <label for="b-email">Email</label>
-              <input id="b-email" name="email" type="email" autocomplete="email" required maxlength="160" aria-describedby="b-email-err">
-              <p class="field__error" id="b-email-err"></p>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="b-phone">Phone <span class="field__opt">(optional)</span></label>
-            <input id="b-phone" name="phone" type="tel" autocomplete="tel" maxlength="32" aria-describedby="b-phone-err">
-            <p class="field__error" id="b-phone-err"></p>
-          </div>
-
-          <div class="field">
-            <label for="b-notes">Anything we should know? <span class="field__opt">(optional)</span></label>
-            <textarea id="b-notes" name="notes" rows="3" maxlength="2000" aria-describedby="b-notes-err"></textarea>
-            <p class="field__error" id="b-notes-err"></p>
-          </div>
-
-          <div class="hp" aria-hidden="true">
-            <label for="b-company">Company</label>
-            <input id="b-company" name="company" type="text" tabindex="-1" autocomplete="off">
-          </div>
-
-          <div class="form__footer">
-            <button class="btn btn--neon btn--lg btn--submit" type="submit" data-submit>
-              <span class="btn__label">Request booking</span>
-              <span class="btn__spinner" aria-hidden="true"></span>
-            </button>
-            <p class="form__status" role="status" aria-live="polite" data-form-status></p>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- ================================= FOOTER ================================= -->
-  <footer class="site-footer">
-    <div class="container">
-      <p class="site-footer__big" aria-hidden="true">Fore!</p>
-      <div class="site-footer__cols">
-        <nav aria-label="Footer">
-          <ul>
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#bar">Food &amp; drink</a></li>
-            <li><a href="#groups">Groups</a></li>
-            <li><a href="#book">Book a tee time</a></li>
-          </ul>
-        </nav>
-        <ul class="site-footer__visit" data-footer-visit></ul>
-      </div>
-      <p class="site-footer__legal">© <span data-year></span> Alley Golf</p>
+          </fieldset>
+        </div>
+        <aside class="booker-summary">
+          <span class="shot-label">Your slot</span>
+          <dl>
+            <div><dt>Booking</dt><dd id="sumSvc">–</dd></div>
+            <div><dt>Day</dt><dd id="sumDay">–</dd></div>
+            <div><dt>Time</dt><dd id="sumTime">–</dd></div>
+            <div><dt>Players</dt><dd id="sumPlayers">2</dd></div>
+          </dl>
+          <button class="btn" id="bookBtn" type="submit" disabled>Book this slot</button>
+          <p class="fine" id="bookHelp">Pick a day and a time to continue.</p>
+        </aside>
+      </form>
     </div>
-  </footer>
+  </section>
+
+  <dialog class="putt-dialog" id="puttDialog" aria-labelledby="puttTitle">
+    <svg class="putt-scene" id="puttScene" viewBox="0 0 400 230" aria-hidden="true">
+      <defs><radialGradient id="pg" cx=".5" cy=".45" r=".6"><stop offset="0" stop-color="#8fd27f"/><stop offset="1" stop-color="#4f9e5a"/></radialGradient></defs>
+      <ellipse cx="200" cy="150" rx="196" ry="70" fill="#3f8a4c"/>
+      <ellipse cx="200" cy="146" rx="182" ry="60" fill="url(#pg)"/>
+      <path d="M40 160 Q200 110 360 150" stroke="#fff" stroke-opacity=".1" stroke-width="16" fill="none"/>
+      <path id="puttLine" d="M66 182 Q 190 70 312 140" fill="none" stroke="#fff6d6" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round" opacity="0"/>
+      <ellipse id="cupRing" cx="312" cy="140" rx="13" ry="5" fill="none" stroke="#fff6d6" stroke-width="2" opacity="0"/>
+      <ellipse cx="312" cy="140" rx="13" ry="5" fill="#123222"/>
+      <g id="puttFlag"><line x1="315" y1="140" x2="315" y2="40" stroke="#f6f0e1" stroke-width="3"/><path d="M316 41 l40 12 -40 12z" fill="#c9a24a"/></g>
+      <ellipse id="puttShadow" cx="66" cy="186" rx="8" ry="2.5" fill="#000" opacity=".25"/>
+      <circle id="puttBall" cx="66" cy="182" r="7.5" fill="#fffef8" stroke="#c7c2b4"/>
+      <g id="confetti"></g>
+    </svg>
+    <div class="putt-copy">
+      <p class="putt-kicker" id="puttKicker">Lining it up…</p>
+      <h3 id="puttTitle">It's in the cup!</h3>
+      <p class="putt-detail" id="puttDetail"></p>
+      <p class="putt-next" id="puttNext"></p>
+      <div class="putt-actions">
+        <a class="btn" id="puttGo" href="tel:+17182259187">Call to confirm</a>
+        <button class="btn btn--ghost" type="button" id="puttClose">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 11. CONTACT -->
+  <section class="section" id="contact" data-stop>
+    <div class="deco deco--tree" data-speed="0.1" style="width:160px;height:226px;right:-40px;top:-10px"><svg><use href="#sym-tree"/></svg></div>
+    <div class="wrap grid contact-grid">
+      <div>
+        <div class="head reveal" style="margin-bottom:18px">
+          <span class="eyebrow">Contact</span>
+          <h2>Come hit a bucket</h2>
+        </div>
+        <address class="addr reveal" style="--d:1">
+          232-01 Northern Blvd<br>Douglaston, NY 11362<br>
+          <a href="tel:+17182259187">(718) 225-9187</a>
+        </address>
+        <p class="reveal" style="--d:2;color:var(--ink-soft)">Just off Northern Boulevard by Alley Pond Park, in Douglaston, Queens.</p>
+        <div class="contact-ctas reveal" style="--d:3">
+          <a class="btn" href="#book" data-book="bay">Book a Bay</a>
+          <a class="btn btn--green" href="#book" data-book="lesson">Book a Lesson</a>
+        </div>
+      </div>
+      <div class="map reveal" style="--d:2">
+        <iframe title="Map to Alley Pond Golf Center, 232-01 Northern Blvd, Douglaston, NY" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=232-01+Northern+Blvd,+Douglaston,+NY+11362&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 12. FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#top">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#164a35" stroke="#c9a24a" stroke-width="2"/><circle cx="27" cy="38" r="11" fill="#f6f0e1"/><path d="M40 12v28" stroke="#e8c56a" stroke-width="3"/><path d="M40 12l13 6-13 6z" fill="#e8c56a"/></svg>
+        <span><b>Alley Pond Golf Center</b><small>Est. 1949 · Reimagined 2026</small></span>
+      </a>
+      <div>
+        <p style="margin:0 0 10px;opacity:.85">232-01 Northern Blvd, Douglaston, NY 11362 · <a href="tel:+17182259187">(718) 225-9187</a></p>
+        <div class="socials">
+          <a href="#" data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" data-social="facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v6h4v-6H16l.6-4h-3.1V8.9c0-.6.4-.9 1-.9z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="managed">
+      <span>Managed by <b>Knox Golf Academy</b></span>
+      <span>© 2026 Alley Pond Golf Center</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Live companion golfer -->
+<div class="buddy away" id="buddy">
+  <div class="buddy-bubble" id="buddyBubble" aria-hidden="true"></div>
+  <canvas id="buddyCanvas" aria-hidden="true"></canvas>
+  <button class="buddy-hit" id="buddyHit" type="button" aria-label="Make the golfer take a swing"></button>
+  <button class="buddy-close" id="buddyClose" type="button" aria-label="Hide the golfer">×</button>
+</div>
+<button class="buddy-restore" id="buddyRestore" type="button" aria-label="Show the golfer" hidden>
+  <svg viewBox="0 0 20 20" aria-hidden="true"><use href="#sym-ball"/></svg>
+</button>
+
+
+<script>
+/* ============================================================
+   Site settings: paste real links here.
+   Empty values fall back to calling the center.
+   ============================================================ */
+const SITE = {
+  bookBayUrl:    "",  // [Book a Bay link]
+  bookSimUrl:    "",  // [Simulator booking link]; falls back to the bay link
+  bookLessonUrl: "",  // [Book a Lesson link]
+  instagram:     "",  // [Instagram URL]
+  facebook:      "",  // [Facebook URL]
+  // Times offered in the slot picker (24h). Replace with your real tee-sheet times.
+  slotTimes: ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"]
+};
+
+(() => {
+  "use strict";
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeInOut = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const easeIn = t => t * t * t;
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+
+  const reduceMQ = matchMedia("(prefers-reduced-motion: reduce)");
+  const mobileMQ = matchMedia("(max-width: 720px)");
+
+  /* ---------- links ---------- */
+  $$("[data-social]").forEach(a => {
+    const url = SITE[a.dataset.social];
+    if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+    else a.title = "Link coming soon";
+  });
+
+  /* ---------- mobile menu ---------- */
+  const menuBtn = $("#menuBtn");
+  const setMenu = open => {
+    document.body.classList.toggle("menu-open", open);
+    menuBtn.setAttribute("aria-expanded", open);
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  };
+  menuBtn.addEventListener("click", () => setMenu(!document.body.classList.contains("menu-open")));
+  $$("#nav a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+  addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+
+  /* ============================================================
+     HERO SWING
+     ============================================================ */
+  const hero = $("#hero"), svg = $("#scene");
+  const arms = $("#arms"), club = $("#club"), torso = $("#torso");
+  const backLeg = $("#backLeg"), backShoe = $("#backShoe");
+  const ball = $("#heroBall"), shadow = $("#ballShadow"), flash = $("#impactFlash");
+  const flightPath = $("#flightPath"), tGlow = $("#tracerGlow"), tCore = $("#tracerCore");
+  const hudSpeed = $("#hudSpeed"), hudLaunch = $("#hudLaunch"), hudCarry = $("#hudCarry");
+  const title = $("#heroTitle"), replayBtn = $("#replay");
+
+  // split the title into letters so the ball can "write" it
+  const letters = [];
+  $$(".line", title).forEach(line => {
+    const text = line.textContent;
+    line.textContent = "";
+    line.setAttribute("aria-hidden", "true");
+    for (const c of text) {
+      const s = document.createElement("span");
+      s.className = "ch";
+      s.textContent = c === " " ? " " : c;
+      line.appendChild(s);
+      letters.push(s);
+    }
+  });
+  let letterAt = []; // normalized horizontal position of each letter across the title
+  const measureLetters = () => {
+    const r = title.getBoundingClientRect();
+    letterAt = letters.map(l => {
+      const b = l.getBoundingClientRect();
+      return clamp((b.left + b.width / 2 - r.left) / r.width);
+    });
+  };
+
+  const SHOULDER = [300, 568], HANDS = [309, 652], HIP = [300, 650];
+  const TEE = { x: 360, y: 745 };
+  const LAND = { x: 1290, y: 690 };
+  const PATHS = {
+    wide:   "M360 745 Q 820 -260 1290 690",
+    mobile: "M360 745 Q 820 60 1290 690"
+  };
+  let pathLen = 1;
+
+  const configureScene = () => {
+    const mobile = mobileMQ.matches;
+    svg.setAttribute("viewBox", mobile ? "160 380 1280 520" : "0 0 1600 900");
+    svg.setAttribute("preserveAspectRatio", mobile ? "xMidYMax meet" : "xMidYMax slice");
+    $("#skyRect").style.display = mobile ? "none" : "";
+    $$(".hide-mobile", svg).forEach(n => n.style.display = mobile ? "none" : "");
+    // the blur filter is the most expensive part of the scene; skip it on phones
+    if (mobile) tGlow.removeAttribute("filter"); else tGlow.setAttribute("filter", "url(#fGlow)");
+    tGlow.setAttribute("stroke-width", mobile ? 10 : 16);
+    const d = mobile ? PATHS.mobile : PATHS.wide;
+    [flightPath, tGlow, tCore].forEach(p => p.setAttribute("d", d));
+    pathLen = flightPath.getTotalLength();
+    [tGlow, tCore].forEach(p => { p.style.strokeDasharray = pathLen; });
+  };
+
+  const rot = (el, deg, [cx, cy]) => el.setAttribute("transform", `rotate(${deg.toFixed(2)} ${cx} ${cy})`);
+  const setPose = (a, c, t, heel = 0) => {
+    rot(arms, a, SHOULDER); rot(club, c, HANDS); rot(torso, t, HIP);
+    // back heel lifts on the follow-through
+    backLeg.setAttribute("transform", `rotate(${(-heel * 8).toFixed(2)} 316 646)`);
+    backShoe.setAttribute("transform", `translate(${(-heel * 10).toFixed(2)} ${(-heel * 6).toFixed(2)}) rotate(${(-heel * 22).toFixed(2)} 346 758)`);
+  };
+  const placeBall = (x, y, r) => ball.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${(r / 9).toFixed(3)})`);
+  const setTracer = (frac, opacity = 1) => {
+    const off = pathLen * (1 - frac);
+    tGlow.style.strokeDashoffset = off; tCore.style.strokeDashoffset = off;
+    tGlow.style.opacity = .55 * opacity; tCore.style.opacity = opacity;
+  };
+  const setShadow = (x, gy, h, r) => {
+    const k = clamp(1 - h / 420);
+    shadow.setAttribute("cx", x.toFixed(1)); shadow.setAttribute("cy", gy.toFixed(1));
+    shadow.setAttribute("rx", (r * 1.1 * (.5 + .5 * k)).toFixed(2)); shadow.setAttribute("ry", (r * .35).toFixed(2));
+    shadow.setAttribute("opacity", (.38 * k).toFixed(3));
+  };
+  const setHud = (speed, launch, carry) => {
+    hudSpeed.textContent = speed ? `${speed} mph` : "–";
+    hudLaunch.textContent = launch ? `${launch}°` : "–";
+    hudCarry.textContent = carry;
+  };
+
+  // timeline (ms)
+  const T = { addr: 300, back: 1000, top: 1950, hold: 2150, impact: 2430, follow: 3100, land: 5250, b1: 5600, b2: 5880, rest: 6250, done: 6350 };
+  const CARRY = 247;
+
+  const restPoint = () => ({ x: 1348, y: LAND.y, r: 5.5 });
+
+  function frame(t) {
+    // ---- golfer ----
+    let a = 0, c = 0, tr = 0, heel = 0;
+    if (t < T.back) {
+      c = t > T.addr ? 5 * Math.sin((t - T.addr) / (T.back - T.addr) * Math.PI * 2) : 0; // waggle
+    } else if (t < T.top) {
+      const p = easeInOut((t - T.back) / (T.top - T.back));
+      a = 130 * p; c = 92 * p; tr = 6 * p;
+    } else if (t < T.hold) {
+      a = 130; c = 92; tr = 6;
+    } else if (t < T.impact) {
+      const p = easeIn((t - T.hold) / (T.impact - T.hold));
+      a = 130 * (1 - p); c = 92 * (1 - Math.pow(p, 2.6)); tr = 6 - 6 * p; // lag, then release
+    } else if (t < T.follow) {
+      const p = easeOut((t - T.impact) / (T.follow - T.impact));
+      a = -148 * p; c = -88 * p; tr = -8 * p; heel = p;
+    } else { a = -148; c = -88; tr = -8; heel = 1; }
+    setPose(a, c, tr, heel);
+
+    // ---- impact flash ----
+    const fq = (t - T.impact) / 260;
+    if (fq >= 0 && fq <= 1) { flash.setAttribute("r", 8 + 70 * fq); flash.setAttribute("opacity", (1 - fq) * .9); }
+    else flash.setAttribute("opacity", 0);
+
+    // ---- ball ----
+    if (t < T.impact) {
+      placeBall(TEE.x, TEE.y, 9); setShadow(TEE.x, 758, 0, 9); setTracer(0); setHud(0, 0, 0);
+      return;
+    }
+    if (t < T.land) {
+      const f = (t - T.impact) / (T.land - T.impact);
+      const s = f + .28 * f * (1 - f);           // quick off the face, slower at the end
+      const pt = flightPath.getPointAtLength(s * pathLen);
+      const r = lerp(9, 5.5, s), gy = lerp(758, LAND.y + 2, s);
+      placeBall(pt.x, pt.y, r); setShadow(pt.x, gy, gy - pt.y, r); setTracer(s);
+      setHud(Math.round(lerp(120, 152, clamp(f * 6))), "14.2", Math.round(CARRY * s));
+      letters.forEach((l, i) => { if (letterAt[i] <= s * 1.04) l.classList.add("lit"); });
+      return;
+    }
+    letters.forEach(l => l.classList.add("lit"));
+    setHud(152, "14.2", CARRY);
+    const hop = (x0, x1, h, p) => ({ x: lerp(x0, x1, p), y: LAND.y - 4 * h * p * (1 - p) });
+    let pos;
+    if (t < T.b1) pos = hop(LAND.x, 1318, 30, (t - T.land) / (T.b1 - T.land));
+    else if (t < T.b2) pos = hop(1318, 1336, 11, (t - T.b1) / (T.b2 - T.b1));
+    else if (t < T.rest) pos = { x: lerp(1336, 1348, easeOut((t - T.b2) / (T.rest - T.b2))), y: LAND.y };
+    else pos = restPoint();
+    placeBall(pos.x, pos.y, 5.5); setShadow(pos.x, LAND.y + 2, LAND.y - pos.y, 5.5);
+    setTracer(1, lerp(1, .55, clamp((t - T.land) / 1200)));
+    if (t >= T.done) hero.classList.add("hero-done");
+  }
+
+  function showFinal() {
+    setPose(-148, -88, -8, 1);
+    flash.setAttribute("opacity", 0);
+    const p = restPoint();
+    placeBall(p.x, p.y, p.r); setShadow(p.x, LAND.y + 2, 0, p.r);
+    setTracer(1, .55); setHud(152, "14.2", CARRY);
+    letters.forEach(l => l.classList.add("lit"));
+    hero.classList.add("hero-done");
+  }
+
+  let raf = 0, t0 = 0, playing = false;
+  function tick(now) {
+    const t = now - t0;
+    frame(t);
+    if (t < T.done + 1300) raf = requestAnimationFrame(tick);
+    else { playing = false; replayBtn.hidden = false; }
+  }
+  function play() {
+    cancelAnimationFrame(raf);
+    hero.classList.add("hero-anim");
+    hero.classList.remove("hero-done");
+    letters.forEach(l => l.classList.remove("lit"));
+    replayBtn.hidden = true;
+    measureLetters();
+    frame(0);
+    playing = true;
+    t0 = performance.now();
+    raf = requestAnimationFrame(tick);
+  }
+
+  configureScene();
+  if (reduceMQ.matches) showFinal();
+  else {
+    // wait for fonts so the letter positions are measured correctly
+    const start = () => play();
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(start, 250));
+  }
+  replayBtn.addEventListener("click", () => { play(); });
+
+  let resizeTimer;
+  mobileMQ.addEventListener("change", () => {
+    configureScene();
+    if (!playing) showFinal();
+  });
+  reduceMQ.addEventListener("change", () => { if (reduceMQ.matches) { cancelAnimationFrame(raf); playing = false; showFinal(); replayBtn.hidden = true; } });
+
+  /* ============================================================
+     SCROLL: rolling ball, section arrivals, parallax
+     ============================================================ */
+  const main = $("#main");
+  const sections = $$("[data-stop]");
+  const track = $("#rollTrack"), rollBall = $("#rollBall"), rollFill = $("#rollFill");
+  const decos = $$(".deco[data-speed]");
+  const heroPx = [["#pxClouds", .18], ["#pxSun", .1], ["#pxTrees", .05], ["#pxRange", .03]].map(([s, k]) => [$(s), k]);
+  const sim = $("#sim"), mini = $("#mini");
+
+  if (reduceMQ.matches) {
+    sim.classList.add("on");
+    return;
+  }
+
+  document.documentElement.classList.add("motion");
+
+  let stops = [], stopEls = [], mainTop = 0, vh = innerHeight;
+  const arrived = new Set();
+
+  function layout() {
+    vh = innerHeight;
+    mainTop = main.getBoundingClientRect().top + scrollY;
+    stops = sections.map(s => s.getBoundingClientRect().top + scrollY - mainTop + Math.min(110, s.offsetHeight * .15));
+    stopEls.forEach(e => e.remove());
+    stopEls = stops.map(y => {
+      const d = document.createElement("span");
+      d.className = "roll-stop"; d.style.top = y + "px";
+      track.appendChild(d);
+      return d;
+    });
+    update();
+  }
+
+  function ballPosition() {
+    const atBottom = scrollY + vh >= document.documentElement.scrollHeight - 4;
+    const probe = atBottom ? Infinity : scrollY + vh * .62 - mainTop;
+    const pts = [0, ...stops];
+    if (probe <= 0) return 0;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const a = pts[i], b = pts[i + 1];
+      if (probe < b) {
+        // rest at the section, then roll quickly to the next one
+        const hold = Math.min((b - a) * .5, vh * .35);
+        const r = clamp((probe - a - hold) / (b - a - hold));
+        return a + (b - a) * easeInOut(r);
+      }
+    }
+    return pts[pts.length - 1];
+  }
+
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const y = ballPosition();
+    const size = rollBall.offsetWidth || 18;
+    rollBall.style.transform = `translate3d(0,${y.toFixed(1)}px,0) rotate(${(y / (Math.PI * size) * 360).toFixed(1)}deg)`;
+    rollFill.style.height = y.toFixed(1) + "px";
+    sections.forEach((s, i) => {
+      if (!arrived.has(i) && y >= stops[i] - 1) {
+        arrived.add(i);
+        s.classList.add("arrived");
+        stopEls[i] && stopEls[i].classList.add("hit");
+      }
+    });
+
+    // soft parallax (desktop only; phones get a calmer page)
+    if (!mobileMQ.matches) {
+      decos.forEach(d => {
+        const r = d.parentElement.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        const off = (r.top + r.height / 2 - vh / 2) * parseFloat(d.dataset.speed);
+        d.style.transform = `translate3d(0,${off.toFixed(1)}px,0)`;
+      });
+    }
+    if (scrollY < vh * 1.2) heroPx.forEach(([el, k]) => { el.style.transform = `translate(0px, ${(scrollY * k * 1.2).toFixed(1)}px)`; });
+  }
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { layout(); if (!playing) measureLetters(); }, 150); });
+  addEventListener("load", layout);
+  if (document.fonts) document.fonts.ready.then(layout);
+  layout();
+  // the map iframe and fonts can shift layout; re-measure when the page height changes
+  if ("ResizeObserver" in window) new ResizeObserver(() => layout()).observe(main);
+
+  /* simulator screen powers on, putt plays only while visible */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.target === sim && e.isIntersecting) sim.classList.add("on");
+      if (e.target === mini) mini.classList.toggle("play", e.isIntersecting);
+    });
+  }, { threshold: .35 });
+  io.observe(sim); io.observe(mini);
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+/* ============================================================
+   Shared 3D golfer (used by the bay and the live companion)
+   Faces +X. Parts are returned so callers can pose them.
+   ============================================================ */
+function buildGolfer(T, { small = false, shadows = true } = {}) {
+  const C = { skin: 0xf2c39d, shirt: 0xf6f0e1, pants: 0x23364a, cap: 0x1d5c41, gold: 0xc9a24a, shoe: 0xfffaf0, ink: 0x14251c };
+  const toon = c => new T.MeshToonMaterial({ color: c });
+  const mesh = (geo, mat, parent, pos, shadow = true) => {
+    const m = new T.Mesh(geo, mat);
+    if (pos) m.position.set(...pos);
+    m.castShadow = shadow && shadows; m.receiveShadow = shadows;
+    parent.add(m); return m;
+  };
+  const cyl = (rt, rb, h, seg = small ? 10 : 16) => new T.CylinderGeometry(rt, rb, h, seg);
+  const sph = (r, seg = small ? 14 : 22) => new T.SphereGeometry(r, seg, seg);
+  const between = (a, b, r, mat, parent) => {
+    const A = new T.Vector3(...a), B = new T.Vector3(...b), len = A.distanceTo(B);
+    const m = mesh(cyl(r, r, len), mat, parent);
+    m.position.copy(A).add(B).multiplyScalar(.5);
+    m.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), B.clone().sub(A).normalize());
+    return m;
+  };
+  const golfer = new T.Group();
+  // legs pivot at the hips so they can walk and jog
+  const legs = [-1, 1].map(s => {
+    const hip = new T.Group(); hip.position.set(.02, .82, s * .1); golfer.add(hip);
+    between([0, 0, 0], [.02, -.74, s * .09], .075, toon(C.pants), hip);
+    mesh(new T.BoxGeometry(.26, .09, .12), toon(C.shoe), hip, [.06, -.775, s * .09]);
+    return hip;
+  });
+  // upper body turns around Y
+  const upper = new T.Group(); upper.position.set(0, .82, 0); golfer.add(upper);
+  mesh(cyl(.2, .17, .52), toon(C.shirt), upper, [0, .27, 0]);
+  mesh(cyl(.205, .205, .05), toon(C.gold), upper, [0, .34, 0], false);
+  mesh(cyl(.176, .176, .07), toon(C.ink), upper, [0, .02, 0], false);
+  mesh(new T.BoxGeometry(.03, .06, .05), toon(C.gold), upper, [.17, .02, 0], false);
+  mesh(new T.ConeGeometry(.08, .09, 3), toon(C.cap), upper, [.15, .5, 0], false).rotation.z = Math.PI;
+  // head
+  const head = new T.Group(); head.position.set(.02, 1.5, 0); golfer.add(head);
+  mesh(cyl(.06, .07, .14), toon(C.skin), golfer, [.01, 1.36, 0]);
+  mesh(sph(.21), toon(C.skin), head);
+  const eyes = [];
+  [-1, 1].forEach(s => {
+    mesh(sph(.045, 10), toon(C.skin), head, [0, 0, s * .205]);
+    const eye = new T.Group(); eye.position.set(.185, .03, s * .075); head.add(eye); eyes.push(eye);
+    mesh(sph(.03, 10), toon(C.ink), eye, null, false);
+    mesh(sph(.01, 6), new T.MeshBasicMaterial({ color: 0xffffff }), eye, [.025, .015, s * -.007], false);
+    mesh(sph(.032, 10), new T.MeshToonMaterial({ color: 0xf19a8a }), head, [.17, -.05, s * .12], false);
+  });
+  const smile = mesh(new T.TorusGeometry(.055, .012, 6, 16, Math.PI), toon(0x8a3b2a), head, [.2, -.06, 0], false);
+  smile.rotation.set(Math.PI / 2, Math.PI / 2, 0); smile.rotateX(Math.PI);
+  mesh(new T.SphereGeometry(.218, 22, 12, 0, Math.PI * 2, 0, Math.PI / 2), toon(C.cap), head, [0, .02, 0]);
+  const brim = mesh(cyl(.15, .15, .02, 20), toon(C.gold), head, [.17, .03, 0], false); brim.scale.set(1, 1, 1.1);
+  mesh(sph(.025, 8), toon(C.gold), head, [0, .24, 0], false);
+  // arms + club pivot at the shoulders and swing about the X axis
+  const arms = new T.Group(); arms.position.set(.04, .43, 0); upper.add(arms);
+  const HAND = [.33, -.43, 0];
+  [-1, 1].forEach(s => {
+    between([0, 0, s * .17], [HAND[0], HAND[1], s * .02], .055, toon(C.skin), arms);
+    between([0, 0, s * .17], [.06, -.1, s * .15], .085, toon(C.shirt), arms);
+  });
+  mesh(sph(.06, 12), toon(0xfffdf6), arms, HAND);
+  const club = new T.Group(); club.position.set(...HAND); arms.add(club);
+  const HEAD = [.38, -.79, 0];
+  between([0, 0, 0], HEAD, .012, new T.MeshStandardMaterial({ color: 0xc9ced4, metalness: .8, roughness: .3 }), club);
+  between([0, .03, 0], [HEAD[0] * .22, HEAD[1] * .22, 0], .022, toon(C.ink), club);
+  const clubHead = mesh(new T.BoxGeometry(.11, .045, .085), new T.MeshStandardMaterial({ color: 0x3b4652, metalness: .6, roughness: .35 }), club, [HEAD[0] + .02, HEAD[1] - .005, -.035]);
+  clubHead.rotation.z = -.5;
+  return { golfer, legs, upper, head, eyes, arms, club, clubHead };
+}
+</script>
+<script>
+/* ============================================================
+   Interactive 3D bay (Three.js)
+   ============================================================ */
+(() => {
+  "use strict";
+  const root = document.getElementById("bay3d");
+  const canvas = document.getElementById("bayCanvas");
+  const swingBtn = document.getElementById("swingBtn");
+  const powerFill = document.getElementById("powerFill");
+  const hint = document.getElementById("bayHint");
+  const panel = document.getElementById("shotPanel");
+  const out = id => document.getElementById(id);
+  const M = { carry: out("mCarry"), ball: out("mBall"), club: out("mClub"), smash: out("mSmash"), launch: out("mLaunch"),
+              spin: out("mSpin"), apex: out("mApex"), total: out("mTotal"), curve: out("mCurve"), num: out("shotNum"), hist: out("shotHistory") };
+
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeInOut = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const easeIn = t => t * t * t;
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const small = matchMedia("(max-width: 720px)").matches;
+
+  /* ---------- shot data (works with or without 3D) ---------- */
+  let shotCount = 0;
+  const history = [];
+  function makeShot(power) {
+    const r = Math.random;
+    const ball = Math.round(92 + power * 76 + (r() - .5) * 4);   // mph
+    const smash = 1.42 + r() * .07;
+    const launch = 10.5 + r() * 5.5;                             // degrees
+    const spin = Math.round(2100 + r() * 1100);                  // rpm
+    const carry = Math.round(ball * 1.6 * (.96 + r() * .06));    // yards
+    const total = carry + Math.round(7 + r() * 15);
+    const apex = Math.round(carry * .36 + launch * 2.2);         // feet
+    const curve = Math.round((r() - .5) * 26);                   // yards, + is right
+    return { ball, club: Math.round(ball / smash), smash, launch, spin, carry, total, apex, curve };
+  }
+  function resetPanel(shot) {
+    shotCount++;
+    M.num.textContent = `Shot ${shotCount}`;
+    M.carry.textContent = "0";
+    ["ball", "club", "smash", "launch", "spin", "apex", "total", "curve"].forEach(k => M[k].textContent = "–");
+    panel.classList.remove("flash");
+    return shot;
+  }
+  function showLaunchData(s) {
+    M.ball.textContent = `${s.ball} mph`;
+    M.club.textContent = `${s.club} mph`;
+    M.smash.textContent = s.smash.toFixed(2);
+    M.launch.textContent = `${s.launch.toFixed(1)}°`;
+    M.spin.textContent = `${s.spin.toLocaleString()} rpm`;
+    panel.classList.add("flash");
+    setTimeout(() => panel.classList.remove("flash"), 700);
+  }
+  function showLandingData(s) {
+    M.carry.textContent = s.carry;
+    M.apex.textContent = `${s.apex} ft`;
+    M.curve.textContent = s.curve === 0 ? "Straight" : `${Math.abs(s.curve)} yd ${s.curve > 0 ? "R" : "L"}`;
+  }
+  function showFinalData(s) {
+    M.total.textContent = `${s.total} yd`;
+    history.unshift(s);
+    history.length = Math.min(history.length, 5);
+    const best = Math.max(...history.map(h => h.total), 1);
+    M.hist.innerHTML = history.map((h, i) =>
+      `<li><span>#${shotCount - i}</span><i style="width:${Math.round(h.total / best * 100)}%"></i><span>${h.total} yd</span></li>`).join("");
+  }
+
+  /* ---------- power meter + swing input ---------- */
+  let charging = false, chargeStart = 0, busy = false, power = 0;
+  function meterLoop() {
+    if (!charging) return;
+    const t = (performance.now() - chargeStart) / 1300;
+    power = .5 - .5 * Math.cos(t * Math.PI * 2);
+    powerFill.style.width = (power * 100).toFixed(1) + "%";
+    requestAnimationFrame(meterLoop);
+  }
+  function startCharge() {
+    if (busy || charging) return;
+    charging = true; chargeStart = performance.now();
+    swingBtn.classList.add("charging"); swingBtn.textContent = "Release!";
+    requestAnimationFrame(meterLoop);
+  }
+  function release() {
+    if (!charging) return;
+    charging = false;
+    swingBtn.classList.remove("charging");
+    // a quick tap gives a smooth, well-struck shot
+    const held = performance.now() - chargeStart;
+    const p = held < 200 ? .82 + Math.random() * .12 : Math.max(.25, power);
+    powerFill.style.width = (p * 100).toFixed(1) + "%";
+    swing(p);
+  }
+  swingBtn.addEventListener("pointerdown", e => { e.preventDefault(); swingBtn.setPointerCapture?.(e.pointerId); startCharge(); });
+  swingBtn.addEventListener("pointerup", release);
+  swingBtn.addEventListener("pointercancel", release);
+  swingBtn.addEventListener("keydown", e => { if ((e.key === " " || e.key === "Enter") && !e.repeat) { e.preventDefault(); startCharge(); } });
+  swingBtn.addEventListener("keyup", e => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); release(); } });
+  swingBtn.addEventListener("click", e => e.preventDefault());
+
+  const setBusy = b => {
+    busy = b; swingBtn.disabled = b;
+    swingBtn.textContent = b ? "Watch it fly…" : "Hold to swing";
+  };
+
+  /* ---------- 3D scene ---------- */
+  let gl = null;
+  try { if (window.THREE) gl = initScene(); } catch (err) { console.warn("3D bay disabled:", err); gl = null; }
+  if (!gl) root.classList.add("no-3d");
+
+  // without WebGL the button still produces a full shot readout
+  function swing(p) {
+    const shot = resetPanel(makeShot(p));
+    setBusy(true);
+    if (gl) { gl.swing(shot); return; }
+    setTimeout(() => showLaunchData(shot), 300);
+    setTimeout(() => showLandingData(shot), 1200);
+    setTimeout(() => { showFinalData(shot); setBusy(false); }, 1700);
+  }
+
+  function initScene() {
+    const T = THREE;
+    const renderer = new T.WebGLRenderer({ canvas, antialias: !small, powerPreference: "high-performance" });
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, small ? 1.5 : 2));
+    renderer.outputEncoding = T.sRGBEncoding;
+    renderer.shadowMap.enabled = !small;
+    renderer.shadowMap.type = T.PCFSoftShadowMap;
+
+    const scene = new T.Scene();
+    const camera = new T.PerspectiveCamera(small ? 50 : 40, 1.6, .05, 500);
+
+    // sky gradient
+    const sky = document.createElement("canvas"); sky.width = 4; sky.height = 256;
+    const sg = sky.getContext("2d").createLinearGradient(0, 0, 0, 256);
+    [[0, "#22183f"], [.32, "#4b2a5c"], [.58, "#a8486a"], [.8, "#ec7c4a"], [1, "#f7b765"]].forEach(([o, c]) => sg.addColorStop(o, c));
+    const sctx = sky.getContext("2d"); sctx.fillStyle = sg; sctx.fillRect(0, 0, 4, 256);
+    const skyTex = new T.CanvasTexture(sky); skyTex.encoding = T.sRGBEncoding;
+    scene.background = skyTex;
+    scene.fog = new T.Fog(0xe0905e, 60, 230);
+
+    scene.add(new T.HemisphereLight(0xffe0c0, 0x2f5d3a, .8));
+    const sun = new T.DirectionalLight(0xffb27a, .9); sun.position.set(-40, 25, -80); scene.add(sun);
+    const key = new T.DirectionalLight(0xfff1dc, .75); key.position.set(6, 10, 7);
+    key.castShadow = !small; key.shadow.mapSize.set(1024, 1024);
+    Object.assign(key.shadow.camera, { left: -3, right: 3, top: 3, bottom: -3, near: 1, far: 30 });
+    scene.add(key);
+
+    const toon = c => new T.MeshToonMaterial({ color: c });
+    const lam = c => new T.MeshLambertMaterial({ color: c });
+    const mesh = (geo, mat, parent, pos, shadow = true) => {
+      const m = new T.Mesh(geo, mat);
+      if (pos) m.position.set(...pos);
+      m.castShadow = shadow && !small; m.receiveShadow = !small;
+      parent.add(m); return m;
+    };
+
+    // ground with mowing stripes
+    const stripes = document.createElement("canvas"); stripes.width = 2; stripes.height = 64;
+    const st = stripes.getContext("2d");
+    st.fillStyle = "#3f8a4f"; st.fillRect(0, 0, 2, 32); st.fillStyle = "#4b9a59"; st.fillRect(0, 32, 2, 32);
+    const gTex = new T.CanvasTexture(stripes); gTex.wrapS = gTex.wrapT = T.RepeatWrapping; gTex.repeat.set(1, 30); gTex.encoding = T.sRGBEncoding;
+    gTex.magFilter = T.NearestFilter;
+    const ground = mesh(new T.PlaneGeometry(400, 400), new T.MeshLambertMaterial({ map: gTex }), scene, [0, 0, -120], false);
+    ground.rotation.x = -Math.PI / 2;
+
+    // hitting deck + mat + bay dividers
+    const deck = mesh(new T.BoxGeometry(14, .12, 5), lam(0x173f2d), scene, [0, -.05, 2.2], false);
+    deck.receiveShadow = !small;
+    mesh(new T.BoxGeometry(14, .02, .08), lam(0xc9a24a), scene, [0, .02, -.3], false);
+    mesh(new T.BoxGeometry(1.6, .03, 1.5), lam(0x3f9a5e), scene, [.3, .02, .3], false).receiveShadow = !small;
+    [-1.7, 2.3].forEach(z => {
+      mesh(new T.BoxGeometry(.12, 2.6, .12), lam(0x0e2c20), scene, [-1.4, 1.3, z]);
+    });
+
+    // golfer: faces +X, target is down the -Z axis
+    const { golfer, upper, head, arms, club, clubHead: ch } = buildGolfer(T, { small, shadows: !small });
+    scene.add(golfer);
+    const cyl = (rt, rb, h, seg = small ? 10 : 16) => new T.CylinderGeometry(rt, rb, h, seg);
+    const sph = (r, seg = small ? 14 : 22) => new T.SphereGeometry(r, seg, seg);
+
+    // ball + tee: the club head at address sits just behind it
+    golfer.updateMatrixWorld(true);
+    const headWorld = new T.Vector3(); ch.getWorldPosition(headWorld);
+    const BALL_R = .045;
+    const TEE = new T.Vector3(headWorld.x, BALL_R + .035, headWorld.z - .1);
+    const ballMat = new T.MeshToonMaterial({ color: 0xffffff });
+    const ball = mesh(sph(BALL_R, 16), ballMat, scene, TEE.toArray());
+    mesh(cyl(.008, .004, .05, 8), lam(0xf6f0e1), scene, [TEE.x, .035, TEE.z], false);
+    // glow sprite keeps the ball visible far down range
+    const glowC = document.createElement("canvas"); glowC.width = glowC.height = 64;
+    const gc = glowC.getContext("2d"), rg = gc.createRadialGradient(32, 32, 0, 32, 32, 32);
+    rg.addColorStop(0, "rgba(255,250,230,1)"); rg.addColorStop(.25, "rgba(255,200,110,.9)"); rg.addColorStop(1, "rgba(255,160,60,0)");
+    gc.fillStyle = rg; gc.fillRect(0, 0, 64, 64);
+    const glow = new T.Sprite(new T.SpriteMaterial({ map: new T.CanvasTexture(glowC), sizeAttenuation: false, depthWrite: false, transparent: true, fog: false }));
+    glow.scale.set(.045, .045, 1); glow.visible = false; scene.add(glow);
+
+    // range: target greens, flags, yardage signs, trees, a passing train
+    const YD = .4; // scene units per yard (range is compressed so the shot stays readable)
+    const flags = [];
+    const sign = (txt, x, z) => {
+      const c = document.createElement("canvas"); c.width = 128; c.height = 64;
+      const g = c.getContext("2d"); g.fillStyle = "#f6f0e1"; g.fillRect(0, 0, 128, 64);
+      g.strokeStyle = "#1d5c41"; g.lineWidth = 8; g.strokeRect(4, 4, 120, 56);
+      g.fillStyle = "#1d5c41"; g.font = "900 40px Archivo, sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(txt, 64, 34);
+      const tex = new T.CanvasTexture(c); tex.encoding = T.sRGBEncoding;
+      const m = mesh(new T.PlaneGeometry(2.4, 1.2), new T.MeshBasicMaterial({ map: tex }), scene, [x, 1.6, z], false);
+      m.rotation.y = Math.atan2(4 - x, 10 - z);
+      mesh(new T.BoxGeometry(.15, 1.2, .15), lam(0x14251c), scene, [x, .5, z], false);
+    };
+    [[50, -9], [100, 11], [150, -14], [200, 16], [250, -20]].forEach(([yd, x]) => sign(String(yd), x, -yd * YD));
+    const green = (x, z, r, flagColor) => {
+      const g1 = mesh(new T.CircleGeometry(r * 1.15, 32), lam(0x5da45a), scene, [x, .015, z], false); g1.rotation.x = -Math.PI / 2; g1.scale.y = .8;
+      const g2 = mesh(new T.CircleGeometry(r, 32), lam(0x86c46a), scene, [x, .02, z], false); g2.rotation.x = -Math.PI / 2; g2.scale.y = .8;
+      mesh(cyl(.05, .05, 3.2, 6), lam(0xf6f0e1), scene, [x, 1.6, z], false);
+      const f = mesh(new T.PlaneGeometry(1.1, .7), new T.MeshLambertMaterial({ color: flagColor, side: T.DoubleSide }), scene, [x + .55, 2.85, z], false);
+      flags.push(f);
+    };
+    green(-6, -36, 4, 0xe85d4a); green(8, -62, 5, 0xffffff); green(-4, -88, 6, 0xc9a24a); green(10, -110, 6, 0xf2e05a);
+    const treeMat = toon(0x1f4a33), treeMat2 = toon(0x2a5d3e), trunkMat = toon(0x4a3426);
+    const treeGeo = new T.ConeGeometry(1, 2.2, 7), trunkGeo = cyl(.15, .2, .8, 6);
+    for (let i = 0; i < (small ? 34 : 70); i++) {
+      const side = i % 2 ? 1 : -1, back = i % 7 === 0;
+      const x = back ? (Math.random() - .5) * 180 : side * (34 + Math.random() * 30);
+      const z = back ? -150 - Math.random() * 20 : 6 - Math.random() * 160;
+      const s = 2 + Math.random() * 2.5;
+      const t = new T.Group(); t.position.set(x, 0, z); scene.add(t);
+      const tr = new T.Mesh(trunkGeo, trunkMat); tr.position.y = .4 * s; tr.scale.setScalar(s); t.add(tr);
+      const cone = new T.Mesh(treeGeo, i % 3 ? treeMat : treeMat2); cone.position.y = 1.9 * s; cone.scale.setScalar(s); t.add(cone);
+    }
+    const sunDisk = new T.Mesh(new T.CircleGeometry(14, 40), new T.MeshBasicMaterial({ color: 0xffe2a0, fog: false }));
+    sunDisk.position.set(-40, 16, -260); scene.add(sunDisk);
+    const train = new T.Group(); scene.add(train);
+    const carMat = lam(0xcfd3dc), winMat = new T.MeshBasicMaterial({ color: 0xffe9a8 });
+    for (let i = 0; i < 4; i++) {
+      mesh(new T.BoxGeometry(14, 3, 3), carMat, train, [i * 14.6, 4.5, 0], false);
+      mesh(new T.BoxGeometry(12, .9, 3.05), winMat, train, [i * 14.6, 5, 0], false);
+    }
+    train.position.set(200, 0, -175);
+
+    // tracer tubes (rebuilt for every shot)
+    const tracerMat = new T.MeshBasicMaterial({ color: 0xfff1c9, fog: false });
+    const tracerGlowMat = new T.MeshBasicMaterial({ color: 0xffb340, transparent: true, opacity: .35, blending: T.AdditiveBlending, depthWrite: false, fog: false });
+    let tracer = null, tracerGlow = null;
+    const SEG = 160, RAD = 6;
+
+    /* ---------- camera: drag to orbit ---------- */
+    const target = new T.Vector3(.25, .95, -.2);
+    const orbit = { az: .85, el: .2, dist: small ? 5.4 : 4.4 };
+    let camMode = "orbit", chase = 0;
+    const camPos = new T.Vector3(), camLook = new T.Vector3();
+    const orbitPos = () => new T.Vector3(
+      target.x + orbit.dist * Math.cos(orbit.el) * Math.cos(orbit.az),
+      target.y + orbit.dist * Math.sin(orbit.el),
+      target.z + orbit.dist * Math.cos(orbit.el) * Math.sin(orbit.az));
+    camPos.copy(orbitPos()); camLook.copy(target);
+
+    let drag = null;
+    canvas.addEventListener("pointerdown", e => { drag = { x: e.clientX, y: e.clientY, moved: false, id: e.pointerId }; });
+    addEventListener("pointermove", e => {
+      if (!drag || e.pointerId !== drag.id) return;
+      const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      if (!drag.moved && Math.hypot(dx, dy) < 5) return;
+      if (!drag.moved) { drag.moved = true; canvas.setPointerCapture?.(e.pointerId); hint.classList.add("gone"); }
+      drag.x = e.clientX; drag.y = e.clientY;
+      orbit.az = clamp(orbit.az + dx * .008, -.6, 2.6);
+      if (e.pointerType !== "touch") orbit.el = clamp(orbit.el + dy * .005, -.05, .9);
+      if (camMode !== "orbit") camMode = "return";
+      requestRender();
+    });
+    const endDrag = e => {
+      if (!drag || e.pointerId !== drag.id) return;
+      const tap = !drag.moved; drag = null;
+      // tapping the scene takes a quick swing
+      if (tap && e.type === "pointerup" && !busy) swing(.82 + Math.random() * .12);
+    };
+    addEventListener("pointerup", endDrag); addEventListener("pointercancel", endDrag);
+
+    /* ---------- swing + flight ---------- */
+    const SHOULDER_TURN = { back: -.55, follow: .85 };
+    function pose(a, c, turn, headTurn) {
+      arms.rotation.x = a; club.rotation.x = c; upper.rotation.y = turn; head.rotation.y = headTurn;
+    }
+    pose(0, 0, 0, 0);
+
+    let shot = null, t0 = 0, flight = null, landed = false, finalShown = false;
+    const K = { back: 950, top: 1100, impact: 1380, follow: 1950 };
+    // thin at the tee (close to the camera), wider down range so it stays visible
+    function taperedTube(curve, radius) {
+      const geo = new T.TubeGeometry(curve, SEG, radius, RAD, false);
+      const pos = geo.attributes.position, c = new T.Vector3(), v = new T.Vector3();
+      for (let i = 0; i <= SEG; i++) {
+        curve.getPointAt(i / SEG, c);
+        const k = lerp(.3, 3.2, Math.pow(i / SEG, .8));
+        for (let j = 0; j <= RAD; j++) {
+          const n = i * (RAD + 1) + j;
+          v.fromBufferAttribute(pos, n).sub(c).multiplyScalar(k).add(c);
+          pos.setXYZ(n, v.x, v.y, v.z);
+        }
+      }
+      return geo;
+    }
+    function buildFlight(s) {
+      const start = TEE.clone();
+      const land = new T.Vector3(TEE.x + s.curve * YD, BALL_R, TEE.z - s.carry * YD);
+      const H = s.apex / 3 * YD * 1.5;
+      const dur = 2300 + s.carry * 4;
+      const at = u => new T.Vector3(
+        lerp(start.x, land.x, u * u),
+        start.y + H * Math.sin(Math.PI * Math.pow(u, .82)),
+        lerp(start.z, land.z, u));
+      const pts = []; for (let i = 0; i <= SEG; i++) pts.push(at(i / SEG));
+      const curve = new T.CatmullRomCurve3(pts);
+      [tracer, tracerGlow].forEach(m => { if (m) { scene.remove(m); m.geometry.dispose(); } });
+      tracer = new T.Mesh(taperedTube(curve, .05), tracerMat);
+      tracerGlow = new T.Mesh(taperedTube(curve, .18), tracerGlowMat);
+      tracer.geometry.setDrawRange(0, 0); tracerGlow.geometry.setDrawRange(0, 0);
+      scene.add(tracer, tracerGlow);
+      const roll = (s.total - s.carry) * YD;
+      return { at, land, dur, roll, dirX: (land.x - start.x) / Math.max(1, start.z - land.z) };
+    }
+
+    function frameSwing(t) {
+      let a = 0, c = 0, turn = 0, ht = 0;
+      if (t < K.back) { const p = easeInOut(t / K.back); a = -2.2 * p; c = -1.55 * p; turn = SHOULDER_TURN.back * p; }
+      else if (t < K.top) { a = -2.2; c = -1.55; turn = SHOULDER_TURN.back; }
+      else if (t < K.impact) {
+        const p = easeIn((t - K.top) / (K.impact - K.top));
+        a = -2.2 * (1 - p); c = -1.55 * (1 - Math.pow(p, 2.6)); turn = SHOULDER_TURN.back * (1 - p) + .15 * p;
+      } else if (t < K.follow) {
+        const p = easeOut((t - K.impact) / (K.follow - K.impact));
+        a = 2.45 * p; c = 1.4 * p; turn = lerp(.15, SHOULDER_TURN.follow, p); ht = .5 * p;
+      } else { a = 2.45; c = 1.4; turn = SHOULDER_TURN.follow; ht = .5; }
+      pose(a, c, turn, ht);
+    }
+
+    function frameBall(t) {
+      if (t < K.impact) return;
+      const ft = t - K.impact;
+      if (!flight) {
+        flight = buildFlight(shot);
+        showLaunchData(shot);
+        glow.visible = true;
+        if (!reduce && camMode === "orbit") { camMode = "chase"; chase = 0; }
+      }
+      const f = ft / flight.dur;
+      if (f < 1) {
+        const u = f + .28 * f * (1 - f);
+        const p = flight.at(u);
+        ball.position.copy(p); glow.position.copy(p);
+        const n = Math.floor(u * SEG) * RAD * 6;
+        tracer.geometry.setDrawRange(0, n); tracerGlow.geometry.setDrawRange(0, n);
+        M.carry.textContent = Math.round(shot.carry * u);
+        return;
+      }
+      if (!landed) { landed = true; showLandingData(shot); tracer.geometry.setDrawRange(0, Infinity); tracerGlow.geometry.setDrawRange(0, Infinity); }
+      // two bounces, then roll out
+      const bt = ft - flight.dur, L = flight.land;
+      const hop = (d0, d1, h, p) => ({ d: lerp(d0, d1, p), y: 4 * h * p * (1 - p) });
+      const r = flight.roll;
+      let st;
+      if (bt < 450) st = hop(0, r * .45, 1.4, bt / 450);
+      else if (bt < 750) st = hop(r * .45, r * .75, .5, (bt - 450) / 300);
+      else if (bt < 1300) st = { d: lerp(r * .75, r, easeOut((bt - 750) / 550)), y: 0 };
+      else st = { d: r, y: 0 };
+      ball.position.set(L.x + flight.dirX * st.d, BALL_R + st.y, L.z - st.d);
+      glow.position.copy(ball.position);
+      if (bt >= 1300 && !finalShown) { finalShown = true; showFinalData(shot); }
+      if (bt >= 2600) {
+        if (camMode === "chase") camMode = "return";
+        setBusy(false); shot = null;
+      }
+    }
+
+    function updateCamera(dt) {
+      if (camMode === "orbit") {
+        camPos.lerp(orbitPos(), drag ? .35 : .12); camLook.lerp(target, .12);
+      } else if (camMode === "chase") {
+        chase = Math.min(1, chase + dt / 900);
+        const k = easeInOut(chase);
+        const bp = ball.position;
+        const behind = new T.Vector3(TEE.x + 1.6, 2.3, TEE.z + 6);
+        camPos.lerp(behind, .04 + .1 * k);
+        const look = new T.Vector3(lerp(TEE.x, bp.x, .85), Math.max(1, bp.y * .8), Math.min(-6, bp.z));
+        camLook.lerp(look, .06 + .1 * k);
+      } else if (camMode === "return") {
+        camPos.lerp(orbitPos(), .06); camLook.lerp(target, .06);
+        if (camPos.distanceTo(orbitPos()) < .05) camMode = "orbit";
+      }
+      camera.position.copy(camPos); camera.lookAt(camLook);
+    }
+
+    /* ---------- loop: only while visible ---------- */
+    let visible = false, last = performance.now(), rafId = 0, needRender = true;
+    function requestRender() { needRender = true; if (!rafId && visible) rafId = requestAnimationFrame(loop); }
+    function loop(now) {
+      rafId = 0;
+      const dt = Math.min(64, now - last); last = now;
+      if (shot) { const t = now - t0; frameSwing(t); frameBall(t); }
+      if (!reduce) {
+        flags.forEach((f, i) => { f.rotation.y = Math.sin(now / 420 + i) * .25; });
+        train.position.x -= dt * .012; if (train.position.x < -260) train.position.x = 200;
+      }
+      updateCamera(dt);
+      renderer.render(scene, camera);
+      const animating = shot || camMode !== "orbit" || drag || !reduce || camPos.distanceTo(orbitPos()) > .01;
+      if (visible && (animating || needRender)) rafId = requestAnimationFrame(loop);
+      needRender = false;
+    }
+    new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      if (visible && !rafId) { last = performance.now(); rafId = requestAnimationFrame(loop); }
+    }, { rootMargin: "100px" }).observe(canvas);
+
+    function resize() {
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      if (!w || !h) return;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h; camera.updateProjectionMatrix();
+      requestRender();
+    }
+    new ResizeObserver(resize).observe(canvas);
+    resize();
+
+    return {
+      swing(s) {
+        shot = s; t0 = performance.now(); flight = null; landed = false; finalShown = false;
+        ball.position.copy(TEE); glow.visible = false;
+        [tracer, tracerGlow].forEach(m => m && m.geometry.setDrawRange(0, 0));
+        hint.classList.add("gone");
+        requestRender();
+      }
+    };
+  }
+})();
+</script>
+<script>
+/* ============================================================
+   Slot booking + putt-in-the-cup confirmation
+   ============================================================ */
+(() => {
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const form = $("booker");
+  const SERVICES = [
+    { id: "bay",    name: "Hitting bay",    note: "Ball-tracking bay",   max: 6, url: () => SITE.bookBayUrl },
+    { id: "sim",    name: "Simulator room", note: "Private room",        max: 6, url: () => SITE.bookSimUrl || SITE.bookBayUrl },
+    { id: "lesson", name: "Lesson",         note: "Knox Golf Academy",   max: 4, url: () => SITE.bookLessonUrl }
+  ];
+  const state = { svc: "bay", day: null, time: null, players: 2 };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const opt = (group, value, inner, checked) =>
+    `<div class="opt"><input type="radio" name="${group}" id="${group}-${esc(value)}" value="${esc(value)}"${checked ? " checked" : ""}><label for="${group}-${esc(value)}">${inner}</label></div>`;
+
+  // services
+  $("svcRow").innerHTML = SERVICES.map(s => opt("svc", s.id, `<b>${s.name}</b><small>${s.note}</small>`, s.id === state.svc)).join("");
+
+  // next 14 days
+  const days = [];
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  for (let i = 0; i < 14; i++) { const d = new Date(today); d.setDate(today.getDate() + i); days.push(d); }
+  const dayKey = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  $("dayRow").innerHTML = days.map((d, i) => opt("day", dayKey(d),
+    `<small>${i === 0 ? "Today" : d.toLocaleDateString("en-US", { weekday: "short" })}</small><b>${d.getDate()}</b><small>${d.toLocaleDateString("en-US", { month: "short" })}</small>`)).join("");
+
+  // times (from SITE.slotTimes, "HH:MM" 24h)
+  const fmtTime = hm => { const [h, m] = hm.split(":").map(Number); return new Date(2000, 0, 1, h, m).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" }); };
+  function renderTimes() {
+    const now = new Date();
+    const isToday = state.day === dayKey(today);
+    $("timeRow").innerHTML = SITE.slotTimes.map(t => {
+      const [h, m] = t.split(":").map(Number);
+      const past = isToday && (h * 60 + m) <= now.getHours() * 60 + now.getMinutes();
+      return past ? "" : opt("time", t, fmtTime(t), t === state.time);
+    }).join("") || `<p class="fine">No more times today. Pick another day.</p>`;
+    if (!$("timeRow").querySelector(`input[value="${state.time}"]`)) state.time = null;
+  }
+  renderTimes();
+
+  const svc = () => SERVICES.find(s => s.id === state.svc);
+  function sync() {
+    const s = svc();
+    state.players = Math.min(state.players, s.max);
+    $("pCount").textContent = state.players;
+    $("pMinus").disabled = state.players <= 1;
+    $("pPlus").disabled = state.players >= s.max;
+    $("sumSvc").textContent = s.name;
+    $("sumDay").textContent = state.day ? new Date(state.day + "T12:00").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" }) : "–";
+    $("sumTime").textContent = state.time ? fmtTime(state.time) : "–";
+    $("sumPlayers").textContent = state.players;
+    const ready = state.day && state.time;
+    $("bookBtn").disabled = !ready;
+    $("bookHelp").textContent = ready ? "Tap to sink the putt and lock in your request." : `Pick ${!state.day ? "a day" : "a time"} to continue.`;
+  }
+  form.addEventListener("change", e => {
+    const { name, value } = e.target;
+    if (name === "svc") state.svc = value;
+    if (name === "day") { state.day = value; renderTimes(); }
+    if (name === "time") state.time = value;
+    sync();
+  });
+  $("pMinus").addEventListener("click", () => { state.players = Math.max(1, state.players - 1); sync(); });
+  $("pPlus").addEventListener("click", () => { state.players = Math.min(svc().max, state.players + 1); sync(); });
+  sync();
+
+  // every "Book" button on the page jumps here with the right service picked
+  document.querySelectorAll("[data-book]").forEach(a => {
+    a.setAttribute("href", "#book");
+    a.addEventListener("click", () => {
+      const id = a.dataset.book;
+      const input = document.getElementById("svc-" + id);
+      if (input) { input.checked = true; state.svc = id; sync(); }
+    });
+  });
+
+  /* ---------- the putt ---------- */
+  const dlg = $("puttDialog");
+  const ballEl = $("puttBall"), shadowEl = $("puttShadow"), line = $("puttLine"), ring = $("cupRing"), flag = $("puttFlag"), confetti = $("confetti");
+  const reduce = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const START = { x: 66, y: 182 }, CTRL = { x: 190, y: 70 }, CUP = { x: 312, y: 140 };
+  const q = (a, c, b, t) => (1 - t) * (1 - t) * a + 2 * (1 - t) * t * c + t * t * b;
+  let raf = 0;
+
+  function placeBall(x, y, s = 1, o = 1) {
+    ballEl.setAttribute("cx", x.toFixed(1)); ballEl.setAttribute("cy", y.toFixed(1));
+    ballEl.setAttribute("r", (7.5 * s).toFixed(2)); ballEl.setAttribute("opacity", o);
+    shadowEl.setAttribute("cx", x.toFixed(1)); shadowEl.setAttribute("cy", (y + 4).toFixed(1)); shadowEl.setAttribute("opacity", .25 * o);
+  }
+  function burst() {
+    const colors = ["#c9a24a", "#e8c56a", "#f6f0e1", "#ff7a3d", "#6bc286"];
+    const bits = Array.from({ length: 28 }, (_, i) => {
+      const r = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      r.setAttribute("width", 5); r.setAttribute("height", 8); r.setAttribute("fill", colors[i % colors.length]);
+      confetti.appendChild(r);
+      const a = -Math.PI / 2 + (Math.random() - .5) * 2.2, v = 2.2 + Math.random() * 3;
+      return { r, x: CUP.x, y: CUP.y - 6, vx: Math.cos(a) * v, vy: Math.sin(a) * v, rot: Math.random() * 360, vr: (Math.random() - .5) * 20 };
+    });
+    let n = 0;
+    (function step() {
+      n++;
+      bits.forEach(b => {
+        b.vy += .12; b.x += b.vx; b.y += b.vy; b.rot += b.vr;
+        b.r.setAttribute("transform", `translate(${b.x.toFixed(1)} ${b.y.toFixed(1)}) rotate(${b.rot.toFixed(0)})`);
+        b.r.setAttribute("opacity", Math.max(0, 1 - n / 90).toFixed(2));
+      });
+      if (n < 90 && dlg.open) requestAnimationFrame(step); else confetti.innerHTML = "";
+    })();
+  }
+  let sunk = false;
+  function finish() {
+    sunk = true;
+    placeBall(CUP.x, CUP.y + 3, .4, 0);
+    dlg.classList.remove("rolling");
+    $("puttKicker").textContent = "Hole in one";
+  }
+  function play() {
+    cancelAnimationFrame(raf);
+    confetti.innerHTML = "";
+    flag.removeAttribute("transform");
+    ring.setAttribute("opacity", 0);
+    dlg.classList.add("rolling");
+    $("puttKicker").textContent = "Lining it up…";
+    if (reduce()) { finish(); return; }
+    placeBall(START.x, START.y);
+    line.setAttribute("opacity", .8);
+    const t0 = performance.now(), AIM = 500, ROLL = 1700, DROP = 260;
+    (function step(now) {
+      const t = now - t0;
+      if (t < AIM) { raf = requestAnimationFrame(step); return; }
+      line.setAttribute("opacity", Math.max(0, .8 - (t - AIM) / 400));
+      const r = Math.min(1, (t - AIM) / ROLL);
+      const u = 1 - Math.pow(1 - r, 2.2);            // ball slows as it nears the cup
+      placeBall(q(START.x, CTRL.x, CUP.x, u), q(START.y, CTRL.y, CUP.y, u) + (u > .97 ? 0 : 0));
+      if (r < 1) { raf = requestAnimationFrame(step); return; }
+      const d = Math.min(1, (t - AIM - ROLL) / DROP);  // drop into the cup
+      placeBall(CUP.x, CUP.y + 3 * d, 1 - .6 * d, 1 - d);
+      if (d < 1) { raf = requestAnimationFrame(step); return; }
+      ring.setAttribute("opacity", 1);
+      flag.setAttribute("transform", `translate(0 -14)`);
+      burst();
+      finish();
+    })(t0);
+  }
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if (!state.day || !state.time) return;
+    const s = svc();
+    const when = `${$("sumDay").textContent} · ${fmtTime(state.time)}`;
+    $("puttDetail").textContent = `${s.name} · ${when} · ${state.players} ${state.players === 1 ? "player" : "players"}`;
+    const url = s.url();
+    const go = $("puttGo");
+    if (url) {
+      go.href = url; go.target = "_blank"; go.rel = "noopener";
+      go.textContent = "Complete booking";
+      $("puttNext").textContent = "Last step: confirm this slot on our booking page.";
+    } else {
+      go.href = "tel:+17182259187"; go.removeAttribute("target");
+      go.textContent = "Call (718) 225-9187";
+      $("puttNext").textContent = "Last step: give us a call and we'll confirm this slot for you.";
+    }
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+    play();
+  });
+  $("puttClose").addEventListener("click", () => dlg.close ? dlg.close() : dlg.removeAttribute("open"));
+  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener("close", () => {
+    cancelAnimationFrame(raf);
+    if (sunk) { sunk = false; dispatchEvent(new CustomEvent("apgc:cheer")); }
+  });
+})();
+</script>
+<script>
+/* ============================================================
+   Live companion: a 3D golfer who jogs along the bottom of the
+   page as you scroll, watches the cursor, chats about each
+   section, swings when clicked and cheers after a booking.
+   ============================================================ */
+(() => {
+  "use strict";
+  const el = document.getElementById("buddy");
+  const canvas = document.getElementById("buddyCanvas");
+  const bubble = document.getElementById("buddyBubble");
+  const restore = document.getElementById("buddyRestore");
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const easeInOut = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } },
+                  set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+  if (!window.THREE || typeof buildGolfer !== "function") { el.remove(); restore.remove(); return; }
+  const T = THREE;
+  let renderer;
+  try { renderer = new T.WebGLRenderer({ canvas, alpha: true, antialias: true }); }
+  catch (e) { el.remove(); restore.remove(); return; }
+  renderer.setClearColor(0x000000, 0);
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  renderer.outputEncoding = T.sRGBEncoding;
+
+  const scene = new T.Scene();
+  const camera = new T.PerspectiveCamera(30, 1, .1, 50);
+  camera.position.set(4.6, 1.15, 0); camera.lookAt(0, .88, 0);
+  scene.add(new T.HemisphereLight(0xfff4e0, 0x2f5d3a, .95));
+  const key = new T.DirectionalLight(0xffffff, .65); key.position.set(4, 5, 2); scene.add(key);
+
+  const G = buildGolfer(T, { small: true, shadows: false });
+  scene.add(G.golfer);
+  const shadow = new T.Mesh(new T.CircleGeometry(.42, 24), new T.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: .18, depthWrite: false }));
+  shadow.rotation.x = -Math.PI / 2; shadow.position.y = .005; scene.add(shadow);
+  const ball = new T.Mesh(new T.SphereGeometry(.05, 14, 14), new T.MeshToonMaterial({ color: 0xffffff }));
+  ball.visible = false; G.golfer.add(ball);
+
+  /* ---------- talking ---------- */
+  let bubbleTimer = 0;
+  function say(text, ms = 3600) {
+    bubble.textContent = text;
+    bubble.classList.add("show");
+    clearTimeout(bubbleTimer);
+    bubbleTimer = setTimeout(() => bubble.classList.remove("show"), ms);
+  }
+  const LINES = {
+    about: "Swinging here since 1949. Looking good for my age!",
+    range: "Every shot gets traced. Hover a card and watch!",
+    simulators: "Raining? Let's play a famous course inside.",
+    "mini-golf": "Mini golf is coming soon. I've been practicing!",
+    lessons: "Knox Golf Academy fixed my slice. True story.",
+    dining: "Sichuan heat after a bucket of balls? Yes please.",
+    "pro-shop": "I could use a new glove…",
+    events: "Birthday on the range? Count me in!",
+    visit: "Call us for today's hours.",
+    book: "Pick a slot and I'll watch you sink the putt!",
+    contact: "See you at 232-01 Northern Blvd!"
+  };
+  const said = new Set();
+
+  /* ---------- actions ---------- */
+  let action = null; // { type, t0 }
+  const play = type => { if (!action || action.type !== "swing") action = { type, t0: performance.now() }; wake(); };
+  const SWING_LINES = n => [`Fore! That one went ${n} yards.`, `${n} yards, right down the middle.`, `Ooh, ${n}! Book a bay and beat it.`];
+  function swing() {
+    if (action && action.type === "swing") return;
+    play("swing");
+    const n = 210 + Math.round(Math.random() * 70);
+    setTimeout(() => say(SWING_LINES(n)[Math.floor(Math.random() * 3)], 3000), 900);
+  }
+  document.getElementById("buddyHit").addEventListener("click", swing);
+  addEventListener("apgc:cheer", () => { play("cheer"); say("It's in! See you on the tee!", 4000); });
+
+  /* ---------- show / hide ---------- */
+  const setOff = off => {
+    el.classList.toggle("off", off);
+    restore.hidden = !off;
+    store.set("apgcBuddy", off ? "off" : "on");
+    if (!off) { wake(); say("I'm back! Scroll and I'll tag along."); }
+  };
+  document.getElementById("buddyClose").addEventListener("click", () => setOff(true));
+  restore.addEventListener("click", () => setOff(false));
+  if (store.get("apgcBuddy") === "off") setOff(true);
+
+  // step aside while the hero or the 3D bay already show a golfer
+  const blockers = new Map();
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => blockers.set(e.target, e.intersectionRatio > .2));
+    const away = [...blockers.values()].some(Boolean);
+    el.classList.toggle("away", away);
+    if (!away) wake();
+  }, { threshold: [0, .2, .5] });
+  ["hero", "swing"].forEach(id => { const n = document.getElementById(id); if (n) io.observe(n); });
+
+  // a line for each section as it comes into view
+  const sio = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const id = e.target.id;
+      if (!e.isIntersecting || said.has(id) || !LINES[id] || el.classList.contains("away") || el.classList.contains("off")) return;
+      said.add(id);
+      say(LINES[id]);
+      if (!action) play("hop");
+    });
+  }, { threshold: .45 });
+  document.querySelectorAll("[data-stop]").forEach(s => sio.observe(s));
+
+  /* ---------- position: jog along the bottom with the scroll ---------- */
+  let x = -200, vx = 0, size = { w: 170, h: 210 };
+  const targetX = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? clamp(scrollY / max) : 0;
+    return p * (innerWidth - size.w);
+  };
+  function resize() {
+    size = { w: el.clientWidth, h: el.clientHeight };
+    renderer.setSize(size.w, size.h, false);
+    camera.aspect = size.w / size.h; camera.updateProjectionMatrix();
+    if (reduce) x = innerWidth - size.w - 8;
+    wake();
+  }
+  addEventListener("resize", resize);
+  addEventListener("scroll", () => wake(), { passive: true });
+
+  /* ---------- head follows the pointer ---------- */
+  let look = { x: 0, y: 0 };
+  addEventListener("pointermove", e => {
+    const cx = x + size.w / 2, cy = innerHeight - size.h * .7;
+    look.x = clamp((e.clientX - cx) / (innerWidth * .5), -1, 1);
+    look.y = clamp((e.clientY - cy) / (innerHeight * .5), -1, 1);
+    wake();
+  }, { passive: true });
+
+  /* ---------- animation ---------- */
+  let phase = 0, jog = 0, facing = .35, nextBlink = performance.now() + 2500, raf = 0, last = performance.now(), idleSince = performance.now();
+  function wake() { if (!raf && !el.classList.contains("off")) { last = performance.now(); raf = requestAnimationFrame(loop); } }
+
+  function loop(now) {
+    raf = 0;
+    const dt = Math.min(50, now - last); last = now;
+    const away = el.classList.contains("away");
+
+    // run toward the scroll position
+    const tx = reduce ? innerWidth - size.w - 8 : targetX();
+    if (reduce) { x = tx; vx = 0; }
+    else {
+      const want = clamp((tx - x) * .006 * dt, -0.55 * dt, .55 * dt);
+      vx = lerp(vx, want, .2);
+      x += vx;
+    }
+    el.classList.toggle("right", x > innerWidth / 2);
+    el.style.transform = `translate3d(${x.toFixed(1)}px,0,0)`;
+
+    const speed = Math.abs(vx) / dt;                 // px per ms
+    jog = lerp(jog, reduce ? 0 : clamp(speed / .35), .15);
+    phase += dt * (.006 + .012 * jog);
+    const dir = vx > .05 ? 1 : vx < -.05 ? -1 : 0;
+    facing = lerp(facing, jog > .15 && dir ? dir * 1.3 : .35, .08);
+
+    // base pose
+    const g = G.golfer;
+    g.rotation.y = facing;
+    g.rotation.z = -.14 * jog;
+    g.position.y = Math.abs(Math.sin(phase)) * .07 * jog + (reduce ? 0 : Math.sin(now / 700) * .004);
+    G.legs[0].rotation.z = Math.sin(phase) * .75 * jog;
+    G.legs[1].rotation.z = -Math.sin(phase) * .75 * jog;
+    G.upper.rotation.y = Math.sin(phase) * .25 * jog;
+    let armX = Math.sin(phase) * .3 * jog, clubX = reduce ? 0 : Math.sin(now / 520) * .06 * (1 - jog);
+    let turn = 0;
+
+    // swing / cheer / hop
+    if (action) {
+      const t = now - action.t0;
+      if (action.type === "swing") {
+        const K = { back: 600, down: 820, follow: 1250, hold: 1850, end: 2350 };
+        if (t < K.back) { const p = easeInOut(t / K.back); armX = -2.1 * p; clubX = -1.5 * p; turn = -.5 * p; }
+        else if (t < K.down) { const p = (t - K.back) / (K.down - K.back); armX = -2.1 * (1 - p * p); clubX = -1.5 * (1 - Math.pow(p, 2.6)); turn = -.5 * (1 - p); }
+        else if (t < K.follow) { const p = easeOut((t - K.down) / (K.follow - K.down)); armX = 2.4 * p; clubX = 1.3 * p; turn = .8 * p; }
+        else if (t < K.hold) { armX = 2.4; clubX = 1.3; turn = .8; }
+        else if (t < K.end) { const p = easeInOut((t - K.hold) / (K.end - K.hold)); armX = 2.4 * (1 - p); clubX = 1.3 * (1 - p); turn = .8 * (1 - p); }
+        else action = null;
+        // the ball pops off the tee at impact
+        const bt = t - K.down;
+        ball.visible = t < K.down || bt < 900;
+        if (t < K.down) ball.position.set(.78, .05, -.08);
+        else if (bt < 900) { const p = bt / 900; ball.position.set(.78 + p * 1.4, .05 + 3.2 * p - 1.2 * p * p, -.08 - p * 2.2); }
+        facing = lerp(facing, .25, .15); g.rotation.y = facing;
+      } else if (action.type === "cheer" || action.type === "hop") {
+        const dur = action.type === "cheer" ? 1300 : 520, h = action.type === "cheer" ? .3 : .14;
+        const p = (t % 650) / 650;
+        if (t < dur) {
+          g.position.y += 4 * h * p * (1 - p);
+          if (action.type === "cheer") { armX = -2.9; clubX = -.4; }
+        } else action = null;
+      }
+    } else ball.visible = false;
+
+    G.arms.rotation.x = armX; G.club.rotation.x = clubX; G.upper.rotation.y += turn;
+    // head watches the pointer (relative to where the body faces)
+    const yaw = clamp(look.x * .9 + (x > innerWidth / 2 ? .15 : -.15), -1.1, 1.1) - g.rotation.y * .6;
+    G.head.rotation.y = lerp(G.head.rotation.y, reduce ? 0 : yaw, .12);
+    G.head.rotation.z = lerp(G.head.rotation.z, reduce ? 0 : -look.y * .35, .12);
+    // blink
+    if (now > nextBlink) { const b = now - nextBlink; const s = b < 140 ? .15 : 1; G.eyes.forEach(e => e.scale.y = s); if (b > 140) nextBlink = now + 2200 + Math.random() * 3000; }
+    shadow.scale.setScalar(1 - g.position.y * 1.2);
+
+    if (!away || Math.abs(tx - x) > 1) renderer.render(scene, camera);
+
+    // keep running while anything is moving; otherwise idle at a gentle rate
+    const busy = action || Math.abs(tx - x) > .5 || jog > .02;
+    if (busy) idleSince = now;
+    if (el.classList.contains("off")) return;
+    if (away && !busy) return;
+    if (reduce && !busy) return;
+    if (busy || now - idleSince < 60000) raf = requestAnimationFrame(loop);
+  }
+
+  x = reduce ? innerWidth - 120 : -200;
+  resize();
+})();
+</script>
 </body>
 </html>
